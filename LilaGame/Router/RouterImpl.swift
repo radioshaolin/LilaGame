@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class RouterImp: NSObject, Router {
+final class RouterImpl: NSObject, Router {
     
     private weak var rootController: UINavigationController?
     private var completions: [UIViewController : () -> Void]

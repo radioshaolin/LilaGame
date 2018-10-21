@@ -1,5 +1,5 @@
 //
-//  GameCoordinatorOutput.swift
+//  SettingsCoordinatorOutput.swift
 //  LilaGame
 //
 //  Created by radioshaolin on 21.10.18.
@@ -7,7 +7,3 @@
 //
 
 import Foundation
-
-protocol GameCoordinatorOutput: class {
-    var finishFlow: (() -> Void)? { get set }
-}

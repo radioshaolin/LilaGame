@@ -6,4 +6,6 @@
 //  Copyright © 2018 Radio Shaolin. All rights reserved.
 //
 
-import Foundation
+protocol AuthCoordinatorOutput: class {
+    var finishFlow: (() -> Void)? { get set }
+}
