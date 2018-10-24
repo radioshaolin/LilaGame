@@ -36,16 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         applicationCoordinator.start(with: deepLink)
     }
     
-//    
-//    
-//    func application(_ application: UIApplication,
-//                     continue userActivity: NSUserActivity,
-//                     restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
-//        let deepLink = DeepLinkOption.build(with: userActivity)
-//        applicationCoordinator.start(with: deepLink)
-//        return true
-//    }
-    
     func application(_ application: UIApplication,
                      continue userActivity: NSUserActivity,
                      restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {

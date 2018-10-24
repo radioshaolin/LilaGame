@@ -13,6 +13,11 @@ final class JoinGameController: UIViewController, JoinGameView {
     var onCompleteJoinGame: ((Player) -> ())?
     var onCancelJoinGame: (() -> Void)?
     
+    deinit {
+        let selfName = String(describing: self)
+        print("::\(selfName):: is deinited")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

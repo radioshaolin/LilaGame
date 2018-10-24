@@ -22,6 +22,11 @@ final class JoinGameCoordinator: BaseCoordinator, JoinGameCoordinatorOutput {
         self.coordinatorFactory = coordinatorFactory
     }
     
+    deinit {
+        let selfName = String(describing: self)
+        print("::\(selfName):: is deinited")
+    }
+    
     override func start() {
         showJoinGame()
     }

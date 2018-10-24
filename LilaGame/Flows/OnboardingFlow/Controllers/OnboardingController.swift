@@ -12,6 +12,11 @@ class OnboardingController: UIViewController, OnboardingView {
     
     var onFinish: (() -> Void)?
     
+    deinit {
+        let selfName = String(describing: self)
+        print("::\(selfName):: is deinited")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

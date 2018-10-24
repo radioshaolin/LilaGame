@@ -13,6 +13,11 @@ final class MainController: UIViewController, MainView {
     var onJoinGameFlowSelect: ((UINavigationController) -> ())?
     var onSettingsFlowSelect: ((UINavigationController) -> ())?
     
+    deinit {
+        let selfName = String(describing: self)
+        print("::\(selfName):: is deinited")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

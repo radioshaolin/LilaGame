@@ -18,6 +18,11 @@ class OnboardingCoordinator: BaseCoordinator, OnboardingCoordinatorOutput {
         self.router = router
     }
     
+    deinit {
+        let selfName = String(describing: self)
+        print("::\(selfName):: is deinited")
+    }
+    
     override func start() {
         showOnboarding()
     }

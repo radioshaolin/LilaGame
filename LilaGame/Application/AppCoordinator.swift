@@ -30,6 +30,11 @@ final class ApplicationCoordinator: BaseCoordinator {
         self.coordinatorFactory = coordinatorFactory
     }
     
+    deinit {
+        let selfName = String(describing: type(of: self))
+        print("::\(selfName):: is deinited")
+    }
+    
     override func start(with option: DeepLinkOption?) {
         //start with deepLink
         if let option = option {

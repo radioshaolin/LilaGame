@@ -18,6 +18,11 @@ class MainCoordinator: BaseCoordinator {
         self.coordinatorFactory = coordinatorFactory
     }
     
+    deinit {
+        let selfName = String(describing: self)
+        print("::\(selfName):: is deinited")
+    }
+    
     override func start() {
 //        mainView.onJoinGameFlowSelect = runJoinGameFlow()
         mainView.onSettingsFlowSelect = runSettingsFlow()
