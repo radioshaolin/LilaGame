@@ -11,7 +11,6 @@ import Foundation
 struct DeepLinkURLConstants {
     static let Onboarding = "onboarding"
     static let SignUp = "signUp"
-    static let Login = "login"
     static let Game = "game"
     static let Settings = "settings"
     static let Terms = "terms"
@@ -20,13 +19,13 @@ struct DeepLinkURLConstants {
 enum DeepLinkOption {
     case onboarding
     case signUp
-    case login
     case game(String?)
     case settings
     case terms
 }
 
 extension DeepLinkOption {
+    
     static func build(with userActivity: NSUserActivity) -> DeepLinkOption? {
         if userActivity.activityType == NSUserActivityTypeBrowsingWeb,
             let url = userActivity.webpageURL,
@@ -43,7 +42,6 @@ extension DeepLinkOption {
         switch id {
         case DeepLinkURLConstants.Onboarding: return .onboarding
         case DeepLinkURLConstants.SignUp: return .signUp
-        case DeepLinkURLConstants.Login: return .login
         case DeepLinkURLConstants.Game: return .game(gameID)
         case DeepLinkURLConstants.Settings: return .settings
         case DeepLinkURLConstants.Terms: return .terms

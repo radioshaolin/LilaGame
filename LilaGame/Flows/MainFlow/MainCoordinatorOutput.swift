@@ -8,4 +8,6 @@
 
 import Foundation
 
-
+protocol MainCoordinatorOutput: class {
+    var finishFlow: (() -> Void)? { get set }
+}

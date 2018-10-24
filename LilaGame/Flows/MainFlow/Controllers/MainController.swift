@@ -8,39 +8,13 @@
 
 import UIKit
 
-final class MainController: UIViewController {
+final class MainController: UIViewController, MainView {
 
+    var onJoinGameFlowSelect: ((UINavigationController) -> ())?
+    var onSettingsFlowSelect: ((UINavigationController) -> ())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    }
-}
-
-extension MainController: MainView {
-    var onJoinGameFlowSelect: ((UINavigationController) -> ())? {
-        get {
-            
-        }
-        set {
-            
-        }
-    }
-    
-    var onSettingsFlowSelect: ((UINavigationController) -> ())? {
-        get {
-            
-        }
-        set {
-            
-        }
-    }
-    
-    var onViewDidLoad: ((UINavigationController) -> ())? {
-        get {
-            
-        }
-        set {
-            
-        }
     }
 }

@@ -38,20 +38,18 @@ final class JoinGameCoordinator: BaseCoordinator, JoinGameCoordinatorOutput {
     
     
     //MARK: - Run coordinators (switch to another flow)
-    
     private func runGameFlow() {
-        
-        let (coordinator, module) = coordinatorFactory.makeGameCoordinatorBox()
-        coordinator.finishFlow = { [weak self, weak coordinator] item in
-            
-            self?.router.dismissModule()
-            self?.removeDependency(coordinator)
-            if let item = item {
-                self?.showItemDetail(item)
-            }
-        }
-        addDependency(coordinator)
-        router.present(module)
-        coordinator.start()
+//        let (coordinator, module) = coordinatorFactory.makeGameCoordinatorBox()
+//        coordinator.finishFlow = { [weak self, weak coordinator] item in
+//
+//            self?.router.dismissModule()
+//            self?.removeDependency(coordinator)
+//            if let item = item {
+//                self?.showItemDetail(item)
+//            }
+//        }
+//        addDependency(coordinator)
+//        router.present(module)
+//        coordinator.start()
     }
 }

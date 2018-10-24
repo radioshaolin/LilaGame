@@ -60,6 +60,7 @@
 		D50D259C217CFC5200DB39EC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D259B217CFC5200DB39EC /* GameView.swift */; };
 		D50D259E217CFC6F00DB39EC /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D259D217CFC6F00DB39EC /* GameController.swift */; };
 		D50D25A0217D02F600DB39EC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D259F217D02F600DB39EC /* MainView.swift */; };
+		D568A6B22180695C003FC83A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D568A6B12180695C003FC83A /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +120,7 @@
 		D50D259B217CFC5200DB39EC /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		D50D259D217CFC6F00DB39EC /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		D50D259F217D02F600DB39EC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D568A6B12180695C003FC83A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				D50D250F217C91D500DB39EC /* AppDelegate.swift */,
+				D568A6B12180695C003FC83A /* AppCoordinator.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				D50D2540217C9F2300DB39EC /* StoryboardsEnum.swift in Sources */,
 				D50D259C217CFC5200DB39EC /* GameView.swift in Sources */,
 				D50D2577217CC57C00DB39EC /* ModuleFactory.swift in Sources */,
+				D568A6B22180695C003FC83A /* AppCoordinator.swift in Sources */,
 				D50D2565217CC23400DB39EC /* GameCoordinator.swift in Sources */,
 				D50D2544217CB20000DB39EC /* Game.swift in Sources */,
 				D50D253E217C9ED700DB39EC /* UIViewControllerExtensions.swift in Sources */,

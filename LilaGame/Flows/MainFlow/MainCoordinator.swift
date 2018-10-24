@@ -19,19 +19,19 @@ class MainCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        mainView.onJoinGameFlowSelect = runJoinGameFlow()
+//        mainView.onJoinGameFlowSelect = runJoinGameFlow()
         mainView.onSettingsFlowSelect = runSettingsFlow()
     }
     
-    private func runJoinGameFlow() -> ((UINavigationController) -> ()) {
-        return { navController in
-            if navController.viewControllers.isEmpty == true {
-                let itemCoordinator = self.coordinatorFactory.makeJoinGameCoordinatorBox(navController: navController)
-                itemCoordinator.start()
-                self.addDependency(itemCoordinator)
-            }
-        }
-    }
+//    private func runJoinGameFlow() -> ((UINavigationController) -> ()) {
+//        return { navController in
+//            if navController.viewControllers.isEmpty == true {
+//                let itemCoordinator = self.coordinatorFactory.makeJoinGameCoordinatorBox(navController: navController)
+//                itemCoordinator.start()
+//                self.addDependency(itemCoordinator)
+//            }
+//        }
+//    }
     
     private func runSettingsFlow() -> ((UINavigationController) -> ()) {
         return { navController in
