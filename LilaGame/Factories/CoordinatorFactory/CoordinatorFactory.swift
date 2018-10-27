@@ -10,21 +10,13 @@ import UIKit
 
 protocol CoordinatorFactory {
     func makeMainCoordinator() -> (configurator: Coordinator, toPresent: Presentable?)
-    
-    func makeAuthCoordinatorBox(router: Router) -> Coordinator & AuthCoordinatorOutput
-    
     func makeOnboardingCoordinator(router: Router) -> Coordinator & OnboardingCoordinatorOutput
-    
-    func makeJoinGameCoordinatorBox() -> (configurator: Coordinator & JoinGameCoordinatorOutput,
-        toPresent: Presentable?)
-    func makeJoinGameCoordinatorBox(navController: UINavigationController?) ->  (configurator: Coordinator & JoinGameCoordinatorOutput,
-        toPresent: Presentable?)
-    
+    func makeAuthCoordinatorBox(router: Router) -> Coordinator & AuthCoordinatorOutput
+    func makeJoinGameCoordinatorBox() -> (configurator: Coordinator & JoinGameCoordinatorOutput, toPresent: Presentable?)
+    func makeJoinGameCoordinatorBox(navController: UINavigationController?) ->  (configurator: Coordinator & JoinGameCoordinatorOutput, toPresent: Presentable?)
     func makeGameCoordinatorBox() -> (configurator: Coordinator & GameCoordinatorOutput,
         toPresent: Presentable?)
-    func makeGameCoordinatorBox(navController: UINavigationController?) ->  (configurator: Coordinator & GameCoordinatorOutput,
-        toPresent: Presentable?)
-
+    func makeGameCoordinatorBox(navController: UINavigationController?) ->  (configurator: Coordinator & GameCoordinatorOutput, toPresent: Presentable?)
     func makeSettingsCoordinator() -> Coordinator
     func makeSettingsCoordinator(navController: UINavigationController?) -> Coordinator
 }

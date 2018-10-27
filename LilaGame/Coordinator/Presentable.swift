@@ -18,4 +18,9 @@ extension UIViewController: Presentable {
     func toPresent() -> UIViewController? {
         return self
     }
+    
+    func deinitLogger() {
+        let selfName = String(describing: self)
+        print("=== \(selfName) === is deinited")
+    }
 }

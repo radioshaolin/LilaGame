@@ -44,3 +44,10 @@ class BaseCoordinator: Coordinator {
         }
     }
 }
+
+extension Coordinator {
+    func deinitLogger() {
+        let selfName = String(describing: self)
+        print("=== \(selfName) === is deinited")
+    }
+}

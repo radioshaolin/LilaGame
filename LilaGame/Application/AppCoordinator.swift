@@ -7,15 +7,22 @@
 //
 
 private var onboardingWasShown = false
+private var isAutorized = true
 
-fileprivate enum LaunchInstructor {
-    case main, onboarding
+private enum LaunchInstructor {
+    case main, auth, onboarding
     
-    static func configure(tutorialWasShown: Bool = onboardingWasShown) -> LaunchInstructor {
-        return tutorialWasShown ? .main : .onboarding
+    static func configure(
+        tutorialWasShown: Bool = onboardingWasShown,
+        isAutorized: Bool = isAutorized) -> LaunchInstructor {
+        
+        switch (tutorialWasShown, isAutorized) {
+        case (false, _): return .onboarding
+        case (true, false): return .onboarding
+        case (true, true): return .main
+        }
     }
 }
-
 final class ApplicationCoordinator: BaseCoordinator {
     
     private let coordinatorFactory: CoordinatorFactory
@@ -31,8 +38,7 @@ final class ApplicationCoordinator: BaseCoordinator {
     }
     
     deinit {
-        let selfName = String(describing: type(of: self))
-        print("::\(selfName):: is deinited")
+        deinitLogger()
     }
     
     override func start(with option: DeepLinkOption?) {
@@ -48,6 +54,7 @@ final class ApplicationCoordinator: BaseCoordinator {
         } else {
             switch instructor {
             case .onboarding: runOnboardingFlow()
+            case .auth: runAuthFlow()
             case .main: runMainFlow()
             }
         }
@@ -57,6 +64,17 @@ final class ApplicationCoordinator: BaseCoordinator {
         let coordinator = coordinatorFactory.makeOnboardingCoordinator(router: router)
         coordinator.finishFlow = { [weak self, weak coordinator] in
             onboardingWasShown = true
+            self?.start()
+            self?.removeDependency(coordinator)
+        }
+        addDependency(coordinator)
+        coordinator.start()
+    }
+    
+    private func runAuthFlow() {
+        let coordinator = coordinatorFactory.makeAuthCoordinatorBox(router: router)
+        coordinator.finishFlow = { [weak self, weak coordinator] in
+            isAutorized = true
             self?.start()
             self?.removeDependency(coordinator)
         }

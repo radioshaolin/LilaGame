@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -43,6 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         applicationCoordinator.start(with: deepLink)
         return true
     }
-
 }
+
 

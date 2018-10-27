@@ -19,8 +19,7 @@ class OnboardingCoordinator: BaseCoordinator, OnboardingCoordinatorOutput {
     }
     
     deinit {
-        let selfName = String(describing: self)
-        print("::\(selfName):: is deinited")
+        deinitLogger()
     }
     
     override func start() {

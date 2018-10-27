@@ -14,8 +14,7 @@ final class MainController: UIViewController, MainView {
     var onSettingsFlowSelect: ((UINavigationController) -> ())?
     
     deinit {
-        let selfName = String(describing: self)
-        print("::\(selfName):: is deinited")
+        deinitLogger()
     }
     
     override func viewDidLoad() {

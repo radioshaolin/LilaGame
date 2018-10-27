@@ -12,17 +12,31 @@
         <!--Onboarding Controller-->
         <scene sceneID="tKi-Cd-RUv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FkY-G5-ZwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="OnboardingController" id="Beq-lV-WFh" customClass="OnboardingController" customModule="LilaGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bFO-pH-ZmZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xd-tg-6lP">
+                                <rect key="frame" x="167" y="515" width="41" height="52"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="Ok"/>
+                                <connections>
+                                    <action selector="finishTapped:" destination="Beq-lV-WFh" eventType="touchUpInside" id="WBo-X5-yeZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="deviceRGB"/>
+                        <constraints>
+                            <constraint firstItem="X6u-iL-fH6" firstAttribute="bottom" secondItem="2xd-tg-6lP" secondAttribute="bottom" constant="100" id="RVB-Gr-O4v"/>
+                            <constraint firstItem="2xd-tg-6lP" firstAttribute="centerX" secondItem="bFO-pH-ZmZ" secondAttribute="centerX" id="ZJH-6M-7m1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="X6u-iL-fH6"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FkY-G5-ZwE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="124" y="50"/>
+            <point key="canvasLocation" x="124" y="49.925037481259373"/>
         </scene>
     </scenes>
 </document>
