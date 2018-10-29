@@ -8,7 +8,9 @@
 
 import UIKit
 
-class OnboardingController: UIViewController, OnboardingView {
+class OnboardingController: UIViewController, OnboardingView, FlowController {
+    
+    typealias T = <#type#>
     
     var onFinish: (() -> Void)?
     

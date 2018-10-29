@@ -6,7 +6,11 @@
 //  Copyright © 2018 Radio Shaolin. All rights reserved.
 //
 
-protocol JoinGameView: BaseView {
-    var onCompleteJoinGame: ((Player) -> ())? { get set }
-    var onCancelJoinGame: (() -> Void)? { get set }
+protocol JoinGameView: BaseView, FlowController { }
+
+enum JoinGameActions {
+    case nicknameAdded(nickname: String)
+    case avatarAdded(avatar: String)
+    case gameSelected(url: String)
+    case cancel
 }

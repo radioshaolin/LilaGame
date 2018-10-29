@@ -6,6 +6,8 @@
 //  Copyright © 2018 Radio Shaolin. All rights reserved.
 //
 
+enum 
+
 class OnboardingCoordinator: BaseCoordinator, OnboardingCoordinatorOutput {
     
     var finishFlow: (() -> Void)?

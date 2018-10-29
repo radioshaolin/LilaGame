@@ -60,6 +60,8 @@
 		D50D259C217CFC5200DB39EC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D259B217CFC5200DB39EC /* GameView.swift */; };
 		D50D259E217CFC6F00DB39EC /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D259D217CFC6F00DB39EC /* GameController.swift */; };
 		D50D25A0217D02F600DB39EC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D259F217D02F600DB39EC /* MainView.swift */; };
+		D50D25A421862D0700DB39EC /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D25A321862D0700DB39EC /* FlowController.swift */; };
+		D50D25A62186492B00DB39EC /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D25A52186492B00DB39EC /* Coordinatable.swift */; };
 		D568A6B22180695C003FC83A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D568A6B12180695C003FC83A /* AppCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +122,8 @@
 		D50D259B217CFC5200DB39EC /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		D50D259D217CFC6F00DB39EC /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		D50D259F217D02F600DB39EC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D50D25A321862D0700DB39EC /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
+		D50D25A52186492B00DB39EC /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
 		D568A6B12180695C003FC83A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -256,6 +260,8 @@
 				D50D2531217C9A6100DB39EC /* BaseCoordinator.swift */,
 				D50D2533217C9B2C00DB39EC /* Presentable.swift */,
 				D50D252E217C97CC00DB39EC /* DeepLinkOption.swift */,
+				D50D25A321862D0700DB39EC /* FlowController.swift */,
+				D50D25A52186492B00DB39EC /* Coordinatable.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -486,6 +492,7 @@
 				D50D2538217C9C3800DB39EC /* RouterImpl.swift in Sources */,
 				D50D2540217C9F2300DB39EC /* StoryboardsEnum.swift in Sources */,
 				D50D259C217CFC5200DB39EC /* GameView.swift in Sources */,
+				D50D25A62186492B00DB39EC /* Coordinatable.swift in Sources */,
 				D50D2577217CC57C00DB39EC /* ModuleFactory.swift in Sources */,
 				D568A6B22180695C003FC83A /* AppCoordinator.swift in Sources */,
 				D50D2565217CC23400DB39EC /* GameCoordinator.swift in Sources */,
@@ -508,6 +515,7 @@
 				D50D2591217CCD5900DB39EC /* TermsView.swift in Sources */,
 				D50D2597217CCE3100DB39EC /* TermsController.swift in Sources */,
 				D50D258B217CCCB800DB39EC /* JoinGameController.swift in Sources */,
+				D50D25A421862D0700DB39EC /* FlowController.swift in Sources */,
 				D50D2585217CC81700DB39EC /* SettingsController.swift in Sources */,
 				D50D258F217CCD4E00DB39EC /* SignUpView.swift in Sources */,
 				D50D25A0217D02F600DB39EC /* MainView.swift in Sources */,

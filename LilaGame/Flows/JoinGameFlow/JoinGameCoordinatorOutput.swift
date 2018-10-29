@@ -11,3 +11,4 @@ import Foundation
 protocol JoinGameCoordinatorOutput: class {
     var finishFlow: (() -> Void)? { get set }
 }
+

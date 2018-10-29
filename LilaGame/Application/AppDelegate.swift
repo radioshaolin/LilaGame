@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return self.window!.rootViewController as! UINavigationController
     }
     private lazy var applicationCoordinator: Coordinator = {
-        return ApplicationCoordinator(router: RouterImpl(rootController: self.rootController),
+        return ApplicationCoordinator(router: RouterImpl(presenter: self.rootController),
                                       coordinatorFactory: CoordinatorFactoryImpl())
     }()
 

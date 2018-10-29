@@ -9,11 +9,13 @@
 import Foundation
 
 protocol Coordinator: class {
+    
     func start()
     func start(with option: DeepLinkOption?)
 }
 
 class BaseCoordinator: Coordinator {
+
     var childCoordinators: [Coordinator] = []
     
     func start() {

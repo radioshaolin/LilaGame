@@ -10,16 +10,16 @@ import UIKit
 
 final class RouterImpl: NSObject, Router {
     
-    private weak var rootController: UINavigationController?
+    private(set) weak var presenter: UINavigationController?
     private var completions: [UIViewController : () -> Void]
     
-    init(rootController: UINavigationController) {
-        self.rootController = rootController
+    init(presenter: UINavigationController) {
+        self.presenter = presenter
         completions = [:]
     }
     
     func toPresent() -> UIViewController? {
-        return rootController
+        return presenter
     }
     
     func present(_ module: Presentable?) {
@@ -28,7 +28,7 @@ final class RouterImpl: NSObject, Router {
     
     func present(_ module: Presentable?, animated: Bool) {
         guard let controller = module?.toPresent() else { return }
-        rootController?.present(controller, animated: animated, completion: nil)
+        presenter?.present(controller, animated: animated, completion: nil)
     }
     
     func dismissModule() {
@@ -36,7 +36,7 @@ final class RouterImpl: NSObject, Router {
     }
     
     func dismissModule(animated: Bool, completion: (() -> Void)?) {
-        rootController?.dismiss(animated: animated, completion: completion)
+        presenter?.dismiss(animated: animated, completion: completion)
     }
     
     func push(_ module: Presentable?)  {
@@ -56,7 +56,7 @@ final class RouterImpl: NSObject, Router {
         if let completion = completion {
             completions[controller] = completion
         }
-        rootController?.pushViewController(controller, animated: animated)
+        presenter?.pushViewController(controller, animated: animated)
     }
     
     func popModule()  {
@@ -64,7 +64,7 @@ final class RouterImpl: NSObject, Router {
     }
     
     func popModule(animated: Bool)  {
-        if let controller = rootController?.popViewController(animated: animated) {
+        if let controller = presenter?.popViewController(animated: animated) {
             runCompletion(for: controller)
         }
     }
@@ -75,12 +75,12 @@ final class RouterImpl: NSObject, Router {
     
     func setRootModule(_ module: Presentable?, hideBar: Bool) {
         guard let controller = module?.toPresent() else { return }
-        rootController?.setViewControllers([controller], animated: false)
-        rootController?.isNavigationBarHidden = hideBar
+        presenter?.setViewControllers([controller], animated: false)
+        presenter?.isNavigationBarHidden = hideBar
     }
     
     func popToRootModule(animated: Bool) {
-        if let controllers = rootController?.popToRootViewController(animated: animated) {
+        if let controllers = presenter?.popToRootViewController(animated: animated) {
             controllers.forEach { controller in
                 runCompletion(for: controller)
             }
@@ -93,3 +93,5 @@ final class RouterImpl: NSObject, Router {
         completions.removeValue(forKey: controller)
     }
 }
+
+

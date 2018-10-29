@@ -35,6 +35,7 @@ final class ApplicationCoordinator: BaseCoordinator {
     init(router: Router, coordinatorFactory: CoordinatorFactory) {
         self.router = router
         self.coordinatorFactory = coordinatorFactory
+        super.init()
     }
     
     deinit {

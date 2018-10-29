@@ -8,7 +8,10 @@
 
 import UIKit
 
-final class JoinGameController: UIViewController, JoinGameView {
+final class JoinGameController: UIViewController, JoinGameView  {
+    typealias T = JoinGameActions
+    var completionHandler: ((T) -> Void)?
+    
     //controller handler
     var onCompleteJoinGame: ((Player) -> ())?
     var onCancelJoinGame: (() -> Void)?
@@ -26,11 +29,11 @@ final class JoinGameController: UIViewController, JoinGameView {
     }
     
     @IBAction func playGameButtonClicked(_ sender: UIBarButtonItem) {
-        onCompleteJoinGame?(Player(name: "", uuid: UUID()))
+        completionHandler?(.nicknameAdded(nickname: "Navuhodonosor"))
     }
     
     @IBAction func cancelJoinGameButtonClicked(_ sender: UIBarButtonItem) {
-        onCancelJoinGame?()
+        completionHandler?(.cancel)
     }
 }
 

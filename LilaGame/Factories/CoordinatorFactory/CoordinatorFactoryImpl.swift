@@ -67,7 +67,7 @@ final class CoordinatorFactoryImpl: CoordinatorFactory {
     }
     
     private func router(_ navController: UINavigationController?) -> Router {
-        return RouterImpl(rootController: navigationController(navController))
+        return RouterImpl(presenter: navigationController(navController))
     }
     
     private func navigationController(_ navController: UINavigationController?) -> UINavigationController {
