@@ -8,14 +8,6 @@
 
 import Foundation
 
-struct DeepLinkURLConstants {
-    static let Onboarding = "onboarding"
-    static let SignUp = "signUp"
-    static let Game = "game"
-    static let Settings = "settings"
-    static let Terms = "terms"
-}
-
 enum DeepLinkOption {
     case onboarding
     case signUp
@@ -50,3 +42,10 @@ extension DeepLinkOption {
     }
 }
 
+struct DeepLinkURLConstants {
+    static let Onboarding = "onboarding"
+    static let SignUp = "signUp"
+    static let Game = "game"
+    static let Settings = "settings"
+    static let Terms = "terms"
+}

@@ -8,19 +8,20 @@
 
 import UIKit
 
-protocol Presentable {
-    func toPresent() -> UIViewController?
+public protocol Presentable {
+    func toPresentable() -> UIViewController
 }
 
-protocol BaseView: NSObjectProtocol, Presentable { }
-
 extension UIViewController: Presentable {
-    func toPresent() -> UIViewController? {
+    public func toPresentable() -> UIViewController {
         return self
     }
-    
-    func deinitLogger() {
+}
+
+extension Presentable {
+    func deinitConsoleDebuger() {
         let selfName = String(describing: self)
         print("=== \(selfName) === is deinited")
     }
 }
+
