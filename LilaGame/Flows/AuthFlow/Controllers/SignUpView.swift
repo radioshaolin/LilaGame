@@ -6,7 +6,7 @@
 //  Copyright © 2018 Radio Shaolin. All rights reserved.
 //
 
-protocol SignUpView: BaseView {
+protocol SignUpView: class, BaseView {
     
     var confirmed: Bool { get set }
     var onSignUpComplete: (() -> Void)? { get set }

@@ -9,14 +9,10 @@
 import UIKit
 
 protocol CoordinatorFactory {
-    func makeMainCoordinator() -> (configurator: Coordinator, toPresent: Presentable?)
-    func makeOnboardingCoordinator(router: Router) -> Coordinator & OnboardingCoordinatorOutput
-    func makeAuthCoordinatorBox(router: Router) -> Coordinator & AuthCoordinatorOutput
-    func makeJoinGameCoordinatorBox() -> (configurator: Coordinator & JoinGameCoordinatorOutput, toPresent: Presentable?)
-    func makeJoinGameCoordinatorBox(navController: UINavigationController?) ->  (configurator: Coordinator & JoinGameCoordinatorOutput, toPresent: Presentable?)
-    func makeGameCoordinatorBox() -> (configurator: Coordinator & GameCoordinatorOutput,
-        toPresent: Presentable?)
-    func makeGameCoordinatorBox(navController: UINavigationController?) ->  (configurator: Coordinator & GameCoordinatorOutput, toPresent: Presentable?)
-    func makeSettingsCoordinator() -> Coordinator
-    func makeSettingsCoordinator(navController: UINavigationController?) -> Coordinator
+    func makeMainCoordinator(router: Router) -> (coordinator: Coordinator<DeepLink>, toPresentable: Presentable?)
+    func makeOnboardingCoordinator(router: Router) -> (coordinator: Coordinator<DeepLink> & OnboardingCoordinatorOutput, toPresentable: Presentable?)
+    func makeAuthCoordinator(router: Router) -> (coordinator: Coordinator<DeepLink> & AuthCoordinatorOutput, toPresentable: Presentable?)
+    func makeStartGameCoordinator(router: Router) ->  (coordinator: Coordinator<DeepLink> & StartGameCoordinatorOutput, toPresentable: Presentable?)
+    func makeGameplayCoordinator(router: Router) ->  (coordinator: Coordinator<DeepLink> & GameplayCoordinatorOutput, toPresentable: Presentable?)
+    func makeSettingsCoordinator(router: Router) -> (coordinator: Coordinator<DeepLink> & SettingsCoordinatorOutput, toPresentable: Presentable?)
 }

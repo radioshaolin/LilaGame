@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum DeepLinkOption {
+enum DeepLink {
     case onboarding
     case signUp
     case game(String?)
@@ -16,9 +16,8 @@ enum DeepLinkOption {
     case terms
 }
 
-extension DeepLinkOption {
-    
-    static func build(with userActivity: NSUserActivity) -> DeepLinkOption? {
+extension DeepLink {
+    static func build(with userActivity: NSUserActivity) -> DeepLink? {
         if userActivity.activityType == NSUserActivityTypeBrowsingWeb,
             let url = userActivity.webpageURL,
             let _ = URLComponents(url: url, resolvingAgainstBaseURL: true) {
@@ -27,7 +26,7 @@ extension DeepLinkOption {
         return nil
     }
     
-    static func build(with dict: [String : AnyObject]?) -> DeepLinkOption? {
+    static func build(with dict: [String : AnyObject]?) -> DeepLink? {
         guard let id = dict?["launch_id"] as? String else { return nil }
         let gameID = dict?["game_id"] as? String
 

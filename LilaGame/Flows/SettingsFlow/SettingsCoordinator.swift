@@ -8,7 +8,9 @@
 
 import Foundation
 
-final class SettingsCoordinator: BaseCoordinator {
+final class SettingsCoordinator: Coordinator<DeepLink>, SettingsCoordinatorOutput {
+    
+    var finishFlow: (() -> Void)?
     
     private let factory: SettingsModuleFactory
     private let router: Router

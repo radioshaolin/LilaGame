@@ -13,11 +13,18 @@ import Foundation
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
     var rootController: UINavigationController {
         return self.window!.rootViewController as! UINavigationController
     }
+    
+    lazy var appRouter: RouterType = Router(navigationController: self.rootController)
+    lazy var appCoordinator: AppCoordinator = AppCoordinator(router: self.appRouter, store: self.appStore)
+    
     private lazy var applicationCoordinator: Coordinator = {
-        return ApplicationCoordinator(router: RouterImpl(presenter: self.rootController),
+        
+        
+        return ApplicationCoordinator(router: Router(navigationController: rootController),
                                       coordinatorFactory: CoordinatorFactoryImpl())
     }()
 

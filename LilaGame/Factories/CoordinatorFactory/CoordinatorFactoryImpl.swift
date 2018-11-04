@@ -10,14 +10,14 @@ import UIKit
 
 final class CoordinatorFactoryImpl: CoordinatorFactory {
     
-    func makeMainCoordinator() -> (configurator: Coordinator, toPresent: Presentable?) {
+    func makeMainCoordinator() -> (coordinator: Coordinator, toPresent: Presentable?) {
         let controller = MainController.controllerFromStoryboard(.main)
         let coordinator = MainCoordinator(mainView: controller,
                                           coordinatorFactory: CoordinatorFactoryImpl())
         return (coordinator, controller)
     }
     
-    func makeJoinGameCoordinatorBox() -> (configurator: Coordinator & JoinGameCoordinatorOutput,
+    func makeJoinGameCoordinatorBox() -> (coordinator: Coordinator & JoinGameCoordinatorOutput,
         toPresent: Presentable?) {
        return makeJoinGameCoordinatorBox(navController: navigationController(nil))
     }

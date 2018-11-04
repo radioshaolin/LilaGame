@@ -18,10 +18,5 @@ extension UIViewController: Presentable {
     }
 }
 
-extension Presentable {
-    func deinitConsoleDebuger() {
-        let selfName = String(describing: self)
-        print("=== \(selfName) === is deinited")
-    }
-}
+protocol BaseView: NSObjectProtocol, Presentable { }
 

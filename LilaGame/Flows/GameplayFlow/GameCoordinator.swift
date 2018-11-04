@@ -9,7 +9,7 @@
 import UIKit
 
 
-final class GameCoordinator: BaseCoordinator, GameCoordinatorOutput {
+final class GameCoordinator: Coordinator<DeepLink>, GameCoordinatorOutput {
     
     var finishFlow: (() -> Void)?
     

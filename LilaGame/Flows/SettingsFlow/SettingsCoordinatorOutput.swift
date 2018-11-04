@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol SettingsCoordinatorOutput: class {
+    var finishFlow: (() -> Void)? { get set }
+}

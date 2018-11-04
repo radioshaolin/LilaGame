@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
+final class AuthCoordinator: Coordinator<DeepLink>, AuthCoordinatorOutput {
     
     var finishFlow: (() -> Void)?
     

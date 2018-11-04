@@ -6,7 +6,7 @@
 //  Copyright © 2018 Radio Shaolin. All rights reserved.
 //
 
-protocol JoinGameView: BaseView, FlowController { }
+protocol JoinGameView: BaseView { }
 
 enum JoinGameActions {
     case nicknameAdded(nickname: String)

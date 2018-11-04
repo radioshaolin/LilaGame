@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class JoinGameCoordinator: BaseCoordinator, JoinGameCoordinatorOutput {
+final class StartGameCoordinator: Coordinator<DeepLink>, StartGameCoordinatorOutput {
     
     var finishFlow: (() -> Void)?
     

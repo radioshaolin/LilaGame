@@ -20,14 +20,18 @@ public protocol CoordinatorType: PresentableCoordinatorType {
     var router: RouterType { get }
 }
 
-open class PresentableCoordinator<DeepLinkType>: NSObject, PresentableCoordinatorType {
+open class PresentableCoordinator<DeepLinkType>: NSObject, PresentableCoordinatorType, Loggable {
     
     public override init() {
         super.init()
     }
     
+    deinit {
+        deinitPrintLog()
+    }
+    
     open func start() { start(with: nil) }
-    open func start(with link: DeepLinkType?) {}
+    open func start(with link: DeepLinkType?) { fatalError("Must override") }
     
     open func toPresentable() -> UIViewController {
         fatalError("Must override toPresentable()")
@@ -45,13 +49,23 @@ open class Coordinator<DeepLinkType>: PresentableCoordinator<DeepLinkType>, Coor
         super.init()
     }
     
+    deinit {
+        deinitPrintLog()
+    }
     public func addChild(_ coordinator: Coordinator<DeepLinkType>) {
-        childCoordinators.append(coordinator)
+                for element in childCoordinators {
+                    if element === coordinator { return }
+                }
+                childCoordinators.append(coordinator)
     }
     
     public func removeChild(_ coordinator: Coordinator<DeepLinkType>?) {
-        if let coordinator = coordinator, let index = childCoordinators.index(of: coordinator) {
-            childCoordinators.remove(at: index)
+        guard let coordinator = coordinator, childCoordinators.isEmpty == false else { return }
+        for (index, element) in childCoordinators.enumerated() {
+            if element === coordinator {
+                childCoordinators.remove(at: index)
+                break
+            }
         }
     }
     

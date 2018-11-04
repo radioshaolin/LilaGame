@@ -23,19 +23,21 @@ private enum LaunchInstructor {
         }
     }
 }
-final class ApplicationCoordinator: BaseCoordinator {
+
+// The coordinator and its children create a composite pattern
+// From here it would be easy to make an iterator of the children
+// Or use chain of responsibility to bubble up errors
+final class AppCoordinator: Coordinator<DeepLink>  {
     
     private let coordinatorFactory: CoordinatorFactory
-    private let router: Router
     
     private var instructor: LaunchInstructor {
         return LaunchInstructor.configure()
     }
     
     init(router: Router, coordinatorFactory: CoordinatorFactory) {
-        self.router = router
         self.coordinatorFactory = coordinatorFactory
-        super.init()
+        super.init(router: router)
     }
     
     deinit {

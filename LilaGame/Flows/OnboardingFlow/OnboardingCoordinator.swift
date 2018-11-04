@@ -6,9 +6,7 @@
 //  Copyright © 2018 Radio Shaolin. All rights reserved.
 //
 
-enum 
-
-class OnboardingCoordinator: BaseCoordinator, OnboardingCoordinatorOutput {
+final class OnboardingCoordinator: Coordinator<DeepLink>, OnboardingCoordinatorOutput {
     
     var finishFlow: (() -> Void)?
     

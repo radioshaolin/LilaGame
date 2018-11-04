@@ -1,5 +1,5 @@
 //
-//  JoinGameCoordinatorOutput.swift
+//  GameCoordinatorOutput.swift
 //  LilaGame
 //
 //  Created by radioshaolin on 21.10.18.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-protocol JoinGameCoordinatorOutput: class {
+protocol GameplayCoordinatorOutput: class {
     var finishFlow: (() -> Void)? { get set }
 }
-
