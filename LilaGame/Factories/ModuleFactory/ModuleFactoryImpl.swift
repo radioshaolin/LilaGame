@@ -13,7 +13,8 @@ final class ModuleFactoryImpl:
     OnboardingModuleFactory,
     SettingsModuleFactory,
     JoinGameModuleFactory,
-    GameModuleFactory {
+    GameModuleFactory,
+    TabBarModuleFactory {
     
     func makeLoginOutput() -> LoginView {
         return LoginController.controllerFromStoryboard(.auth)

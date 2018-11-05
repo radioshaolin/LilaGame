@@ -16,7 +16,11 @@ final class SettingsCoordinator: Coordinator<DeepLink>, SettingsCoordinatorOutpu
     
     init(router: RouterType, factory: SettingsModuleFactory) {
         self.factory = factory
-        self.router = router
+        super.init(router: router)
+    }
+    
+    deinit {
+        deinitPrintLog()
     }
     
     override func start() {
@@ -25,7 +29,7 @@ final class SettingsCoordinator: Coordinator<DeepLink>, SettingsCoordinatorOutpu
     
     //MARK: - Run current flow's controllers
     private func showSettings() {
-        let settingsFlowOutput = factory.makeSettingsOutput()
-        router.setRootModule(settingsFlowOutput, hideBar: true)
+//        let settingsFlowOutput = factory.makeSettingsOutput()
+//        router.setRootModule(settingsFlowOutput, hideBar: true)
     }
 }

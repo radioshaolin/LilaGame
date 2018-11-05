@@ -17,7 +17,7 @@ final class AuthCoordinator: Coordinator<DeepLink>, AuthCoordinatorOutput {
     
     init(router: RouterType, factory: AuthModuleFactory) {
         self.factory = factory
-        self.router = router
+        super.init(router: router)
     }
     
     override func start() {
@@ -45,7 +45,7 @@ final class AuthCoordinator: Coordinator<DeepLink>, AuthCoordinatorOutput {
         signUpView?.onTermsButtonTap = { [weak self] in
             self?.showTerms()
         }
-        router.push(signUpView, animated: true, completion: nil)
+        router.push(signUpView!, animated: true, completion: nil)
     }
     
     private func showTerms() {

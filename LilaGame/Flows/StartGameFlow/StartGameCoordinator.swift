@@ -16,9 +16,9 @@ final class StartGameCoordinator: Coordinator<DeepLink>, StartGameCoordinatorOut
     private let coordinatorFactory: CoordinatorFactory
     
     init(router: Router, factory: JoinGameModuleFactory, coordinatorFactory: CoordinatorFactory) {
-        self.router = router
         self.factory = factory
         self.coordinatorFactory = coordinatorFactory
+        super.init(router: router)
     }
     
     deinit {

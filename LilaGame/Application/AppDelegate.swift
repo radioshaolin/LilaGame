@@ -14,22 +14,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    var rootController: UINavigationController {
-        return self.window!.rootViewController as! UINavigationController
-    }
-    
-//    lazy var appNavigationController: UINavigationController = UINavigationController()
-    lazy var appRouter: RouterType = Router(navigationController: rootController)
-    lazy var appCoordinator: AppCoordinator = AppCoordinator(router: appRouter, coordinatorFactory: CoordinatorFactoryImpl())
+//    var rootController: UINavigationController {
+//        return self.window!.rootViewController as! UINavigationController
+//    }
+//
+    lazy var appNavigationController: UINavigationController = UINavigationController()
+    lazy var appRouter: RouterType = Router(navigationController: appNavigationController)
+    lazy var coordinatorFactory: CoordinatorFactory =   CoordinatorFactoryImpl()
+    lazy var appCoordinator: AppCoordinator = AppCoordinator(router: appRouter, coordinatorFactory: coordinatorFactory)
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // MARK: Window
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.rootViewController = appCoordinator.toPresentable()
-//        window?.backgroundColor = .white
-//        window?.makeKeyAndVisible()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = appCoordinator.toPresentable()
+        window?.backgroundColor = .white
+        window?.makeKeyAndVisible()
         
+        // or get notification from launch options and convert it to a deep link
 //        let notification = launchOptions?[.remoteNotification] as? [String: AnyObject]
         let deepLink = DeepLink.main
         appCoordinator.start(with: deepLink)
@@ -49,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
 //        let deepLink = DeepLink.build(with: userActivity)
 //        applicationCoordinator.start(with: deepLink)
-//        return true
+        return true
     }
 }
 

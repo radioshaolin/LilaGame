@@ -6,6 +6,7 @@
 //  Copyright © 2018 Radio Shaolin. All rights reserved.
 //
 
+protocol TabBarModuleFactory: GameModuleFactory, SettingsModuleFactory {}
 
 protocol OnboardingModuleFactory {
     func makeOnboardingModule() -> OnboardingView
@@ -28,4 +29,5 @@ protocol JoinGameModuleFactory {
 protocol GameModuleFactory {
     func makeGameOutput() -> GameView
 }
+
 

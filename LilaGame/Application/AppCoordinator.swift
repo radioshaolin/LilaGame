@@ -29,21 +29,30 @@ private enum LaunchInstructor {
 // The coordinator and its children create a composite pattern
 // From here it would be easy to make an iterator of the children
 // Or use chain of responsibility to bubble up errors
-final class AppCoordinator: Coordinator<DeepLink>  {
+final class AppCoordinator: Coordinator<DeepLink>, UITabBarControllerDelegate  {
     
-    
-    
-//
-//    private let tabBarController: UITabBarController
-    private let coordinatorFactory: CoordinatorFactory
+    private let tabBarController = UITabBarController()
     private var tabs: [UIViewController: Coordinator<DeepLink>] = [:]
+    private let coordinatorFactory: CoordinatorFactory
     private var instructor: LaunchInstructor {
         return LaunchInstructor.configure()
     }
     
+    lazy var gameTabCoordinator: Coordinator<DeepLink> = {
+        return coordinatorFactory.makeGameCoordinator()
+    }()
+    
+    lazy var settingsTabCoordinator: Coordinator<DeepLink> = {
+        return coordinatorFactory.makeSettingsCoordinator()
+    }()
+    
+    
     init(router: RouterType, coordinatorFactory: CoordinatorFactory) {
         self.coordinatorFactory = coordinatorFactory
         super.init(router: router)
+        router.setRootModule(tabBarController, hideBar: true)
+        tabBarController.delegate = self
+        setTabs([gameTabCoordinator, settingsTabCoordinator])
     }
     
     deinit {
@@ -98,10 +107,42 @@ final class AppCoordinator: Coordinator<DeepLink>  {
 //        coordinator.start()
     }
     
+    
+    
     private func runMainFlow() {
-        let (coordinator, module) = coordinatorFactory.makeTabbarCoordinator(coordinatorFactory: coordinatorFactory)
-        addChild(coordinator)
-        router.setRootModule(module, hideBar: true)
-        coordinator.start()
+//        let (coordinator, module) = coordinatorFactory.makeTabbarCoordinator(coordinatorFactory: coordinatorFactory)
+//        addChild(coordinator)
+//        router.setRootModule(module, hideBar: true)
+//        coordinator.start()
     }
+    
+    private func setTabs(_ coordinators: [Coordinator<DeepLink>], animated: Bool = false) {
+        tabs = [:]
+        // Store view controller to coordinator mapping
+        let vcs = coordinators.map { coordinator -> UIViewController in
+            let viewController = coordinator.toPresentable()
+            tabs[viewController] = coordinator
+            return viewController
+        }
+        tabBarController.setViewControllers(vcs, animated: animated)
+    }
+    
+    // MARK: UITabBarControllerDelegate
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        guard let coordinator = tabs[viewController] else { return true }
+        
+        return true
+        // Let's protect this tab because we can
+//        if coordinator is AccountCoordinator && !store.isLoggedIn {
+//            presentAuthFlow()
+//            return false
+//        } else {
+//            return true
+//        }
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
+    }
+    
 }

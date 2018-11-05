@@ -8,9 +8,7 @@
 
 import UIKit
 
-class OnboardingController: UIViewController, OnboardingView, FlowController {
-    
-    typealias T = <#type#>
+class OnboardingController: UIViewController, OnboardingView {
     
     var onFinish: (() -> Void)?
     
@@ -19,7 +17,7 @@ class OnboardingController: UIViewController, OnboardingView, FlowController {
     }
     
     deinit {
-        deinitLogger()
+        deinitPrintLog()
     }
     
     override func viewDidLoad() {

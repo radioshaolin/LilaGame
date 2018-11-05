@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol GameplayCoordinatorOutput: class {
+protocol GameCoordinatorOutput: class {
     var finishFlow: (() -> Void)? { get set }
 }

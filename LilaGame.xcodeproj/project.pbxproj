@@ -33,7 +33,7 @@
 		D50D2556217CBFD200DB39EC /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D50D2555217CBFD200DB39EC /* Game.storyboard */; };
 		D50D255F217CC13900DB39EC /* AuthCoordinatorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D255E217CC13900DB39EC /* AuthCoordinatorOutput.swift */; };
 		D50D2561217CC14500DB39EC /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D2560217CC14500DB39EC /* AuthCoordinator.swift */; };
-		D50D2563217CC22500DB39EC /* GameplayCoordinatorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D2562217CC22500DB39EC /* GameplayCoordinatorOutput.swift */; };
+		D50D2563217CC22500DB39EC /* GameCoordinatorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D2562217CC22500DB39EC /* GameCoordinatorOutput.swift */; };
 		D50D2565217CC23400DB39EC /* GameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D2564217CC23400DB39EC /* GameCoordinator.swift */; };
 		D50D256C217CC26F00DB39EC /* StartGameCoordinatorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D256B217CC26F00DB39EC /* StartGameCoordinatorOutput.swift */; };
 		D50D256E217CC28700DB39EC /* StartGameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D256D217CC28700DB39EC /* StartGameCoordinator.swift */; };
@@ -97,7 +97,7 @@
 		D50D2555217CBFD200DB39EC /* Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
 		D50D255E217CC13900DB39EC /* AuthCoordinatorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinatorOutput.swift; sourceTree = "<group>"; };
 		D50D2560217CC14500DB39EC /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
-		D50D2562217CC22500DB39EC /* GameplayCoordinatorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayCoordinatorOutput.swift; sourceTree = "<group>"; };
+		D50D2562217CC22500DB39EC /* GameCoordinatorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCoordinatorOutput.swift; sourceTree = "<group>"; };
 		D50D2564217CC23400DB39EC /* GameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCoordinator.swift; sourceTree = "<group>"; };
 		D50D256B217CC26F00DB39EC /* StartGameCoordinatorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCoordinatorOutput.swift; sourceTree = "<group>"; };
 		D50D256D217CC28700DB39EC /* StartGameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCoordinator.swift; sourceTree = "<group>"; };
@@ -318,7 +318,7 @@
 		D50D2557217CBFE500DB39EC /* GameplayFlow */ = {
 			isa = PBXGroup;
 			children = (
-				D50D2562217CC22500DB39EC /* GameplayCoordinatorOutput.swift */,
+				D50D2562217CC22500DB39EC /* GameCoordinatorOutput.swift */,
 				D50D2564217CC23400DB39EC /* GameCoordinator.swift */,
 				D50D255B217CC0ED00DB39EC /* Controllers */,
 			);
@@ -541,7 +541,7 @@
 				D50D2583217CC74900DB39EC /* SettingsView.swift in Sources */,
 				D50D254B217CB4D000DB39EC /* OnboardingCoordinatorOutput.swift in Sources */,
 				D50D2593217CCE1700DB39EC /* LoginController.swift in Sources */,
-				D50D2563217CC22500DB39EC /* GameplayCoordinatorOutput.swift in Sources */,
+				D50D2563217CC22500DB39EC /* GameCoordinatorOutput.swift in Sources */,
 				D50D2561217CC14500DB39EC /* AuthCoordinator.swift in Sources */,
 				D50D255F217CC13900DB39EC /* AuthCoordinatorOutput.swift in Sources */,
 				D50D2536217C9BF400DB39EC /* RouterType.swift in Sources */,

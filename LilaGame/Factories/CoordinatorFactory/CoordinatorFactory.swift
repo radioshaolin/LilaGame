@@ -9,10 +9,10 @@
 import UIKit
 
 protocol CoordinatorFactory {
-    func makeTabbarCoordinator(coordinatorFactory: CoordinatorFactory) -> (coordinator: Coordinator<DeepLink>, toPresent: Presentable)
-    func makeOnboardingCoordinator(router: RouterType) -> (coordinator: Coordinator<DeepLink> & OnboardingCoordinatorOutput, toPresentable: Presentable)
-    func makeAuthCoordinator(router: RouterType) -> (coordinator: Coordinator<DeepLink> & AuthCoordinatorOutput, toPresentable: Presentable)
-    func makeStartGameCoordinator(router: Router) ->  (coordinator: Coordinator<DeepLink> & StartGameCoordinatorOutput, toPresentable: Presentable?)
-//    func makeGameplayCoordinator(router: Router) ->  (coordinator: Coordinator<DeepLink> & GameplayCoordinatorOutput, toPresentable: Presentable?)
-    func makeSettingsCoordinator(router: RouterType) -> (coordinator: Coordinator<DeepLink> & SettingsCoordinatorOutput, toPresentable: Presentable?)
+//    func makeTabbarCoordinator(coordinatorFactory: CoordinatorFactory) -> (coordinator: Coordinator<DeepLink>, toPresent: Presentable)
+//    func makeOnboardingCoordinator(router: RouterType) -> (coordinator: Coordinator<DeepLink> & OnboardingCoordinatorOutput, toPresentable: Presentable)
+//    func makeAuthCoordinator(router: RouterType) -> (coordinator: Coordinator<DeepLink> & AuthCoordinatorOutput, toPresentable: Presentable)
+//    func makeStartGameCoordinator(router: Router) ->  Coordinator<DeepLink> & StartGameCoordinatorOutput
+    func makeGameCoordinator() ->  Coordinator<DeepLink>
+    func makeSettingsCoordinator() -> Coordinator<DeepLink>
 }

@@ -14,7 +14,7 @@ final class OnboardingCoordinator: Coordinator<DeepLink>, OnboardingCoordinatorO
     
     init(with factory: OnboardingModuleFactory, router: RouterType) {
         self.factory = factory
-        self.router = router
+        super.init(router: router)
     }
     
     deinit {

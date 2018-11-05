@@ -18,5 +18,5 @@ extension UIViewController: Presentable {
     }
 }
 
-protocol BaseView: NSObjectProtocol, Presentable { }
+protocol BaseView: NSObjectProtocol, Presentable, Loggable { }
 
