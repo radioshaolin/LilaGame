@@ -8,16 +8,10 @@
 
 import UIKit
 
-final public class Router: NSObject, RouterType, UINavigationControllerDelegate, Loggable {
+final public class RouterImpl: NSObject, Router, UINavigationControllerDelegate, Loggable {
     
     public let navigationController: UINavigationController
     private var completions: [UIViewController : () -> Void]
-    public var rootViewController: UIViewController? {
-        return navigationController.viewControllers.first
-    }
-    public var hasRootController: Bool {
-        return rootViewController != nil
-    }
     
     public init(navigationController: UINavigationController = UINavigationController()) {
         self.navigationController = navigationController

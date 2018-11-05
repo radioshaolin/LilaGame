@@ -12,7 +12,7 @@ final class OnboardingCoordinator: Coordinator<DeepLink>, OnboardingCoordinatorO
     
     private let factory: OnboardingModuleFactory
     
-    init(with factory: OnboardingModuleFactory, router: RouterType) {
+    init(router: RouterType, factory: OnboardingModuleFactory) {
         self.factory = factory
         super.init(router: router)
     }
@@ -26,10 +26,10 @@ final class OnboardingCoordinator: Coordinator<DeepLink>, OnboardingCoordinatorO
     }
     
     func showOnboarding() {
-//        let onboardingModule = factory.makeOnboardingModule()
-//        onboardingModule.onFinish = { [weak self] in
-//            self?.finishFlow?()
-//        }
-//        router.setRootModule(onboardingModule.toPresent())
+        let onboardingModule = factory.makeOnboardingModule()
+        onboardingModule.onFinish = { [weak self] in
+            self?.finishFlow?()
+        }
+        router.push(onboardingModule, animated: true, completion: nil)
     }
 }

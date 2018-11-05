@@ -8,13 +8,7 @@
 
 import Foundation
 
-final class ModuleFactoryImpl:
-    AuthModuleFactory,
-    OnboardingModuleFactory,
-    SettingsModuleFactory,
-    JoinGameModuleFactory,
-    GameModuleFactory,
-    TabBarModuleFactory {
+final class ModuleFactoryImpl: ModuleFactory {
     
     func makeLoginOutput() -> LoginView {
         return LoginController.controllerFromStoryboard(.auth)

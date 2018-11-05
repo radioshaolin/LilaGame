@@ -8,17 +8,18 @@
 
 import Foundation
 
-final class StartGameCoordinator: Coordinator<DeepLink>, StartGameCoordinatorOutput {
+final class StartGameCoordinator: BaseCoordinator, StartGameCoordinatorOutput {
     
     var finishFlow: (() -> Void)?
     
     private let factory: JoinGameModuleFactory
     private let coordinatorFactory: CoordinatorFactory
+    private let router: Router
     
     init(router: Router, factory: JoinGameModuleFactory, coordinatorFactory: CoordinatorFactory) {
+        self.router = router
         self.factory = factory
         self.coordinatorFactory = coordinatorFactory
-        super.init(router: router)
     }
     
     deinit {

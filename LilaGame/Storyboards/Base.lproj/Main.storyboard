@@ -12,7 +12,7 @@
         <!--Item 2-->
         <scene sceneID="Bt8-Hk-4jh">
             <objects>
-                <viewController storyboardIdentifier="SettingsController" id="aeM-h8-nei" customClass="UINavigationController" sceneMemberID="viewController">
+                <viewController id="aeM-h8-nei" customClass="UINavigationController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cwn-Zt-pyV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
         <!--Item 1-->
         <scene sceneID="3Hc-UT-uhD">
             <objects>
-                <viewController storyboardIdentifier="JoinGameController" id="Y1g-Ut-4QK" customClass="UINavigationController" sceneMemberID="viewController">
+                <viewController id="Y1g-Ut-4QK" customClass="UINavigationController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YYJ-Qf-Ee0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="1724" y="-175"/>
         </scene>
-        <!--Main Controller-->
+        <!--Tabbar Controller-->
         <scene sceneID="SuM-sf-ge1">
             <objects>
-                <tabBarController storyboardIdentifier="MainController" id="heO-vs-Rn6" customClass="MainController" customModule="LilaGame" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabbarController" id="heO-vs-Rn6" customClass="TabbarController" customModule="LilaGame" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vYh-Bt-WHv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

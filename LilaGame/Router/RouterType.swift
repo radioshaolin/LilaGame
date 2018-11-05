@@ -8,9 +8,9 @@
 
 import UIKit
 
-public protocol RouterType: class, Presentable {
+public protocol Router: class, Presentable {
     var navigationController: UINavigationController { get }
-    var rootViewController: UIViewController? { get }
+//    var rootViewController: UIViewController? { get }
     
     func setRootModule(_ module: Presentable, hideBar: Bool)
     func present(_ module: Presentable, animated: Bool)

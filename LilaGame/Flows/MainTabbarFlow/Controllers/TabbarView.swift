@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TabbarView: class {
-    var onJoinGameFlowSelect: ((UINavigationController) -> ())? { get set }
+    var onGameFlowSelect: ((UINavigationController) -> ())? { get set }
     var onSettingsFlowSelect: ((UINavigationController) -> ())? { get set }
     var onViewDidLoad: ((UINavigationController) -> ())? { get set }
 }

@@ -8,15 +8,16 @@
 
 import Foundation
 
-final class SettingsCoordinator: Coordinator<DeepLink>, SettingsCoordinatorOutput {
+final class SettingsCoordinator: BaseCoordinator, SettingsCoordinatorOutput {
     
     var finishFlow: (() -> Void)?
     
     private let factory: SettingsModuleFactory
+    private let router: Router
     
-    init(router: RouterType, factory: SettingsModuleFactory) {
+    init(router: Router, factory: SettingsModuleFactory) {
         self.factory = factory
-        super.init(router: router)
+        self.router = router
     }
     
     deinit {

@@ -9,7 +9,8 @@
 import UIKit
 
 final class TabbarController: UITabBarController, UITabBarControllerDelegate, TabbarView {
-    var onJoinGameFlowSelect: ((UINavigationController) -> ())?
+    
+    var onGameFlowSelect: ((UINavigationController) -> ())?
     var onSettingsFlowSelect: ((UINavigationController) -> ())?
     var onViewDidLoad: ((UINavigationController) -> ())?
     
@@ -22,11 +23,12 @@ final class TabbarController: UITabBarController, UITabBarControllerDelegate, Ta
         }
     }
     
+    // MARK: UITabBarControllerDelegate
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         guard let controller = viewControllers?[selectedIndex] as? UINavigationController else { return }
         
         if selectedIndex == 0 {
-            onJoinGameFlowSelect?(controller)
+            onGameFlowSelect?(controller)
         }
         else if selectedIndex == 1 {
             onSettingsFlowSelect?(controller)

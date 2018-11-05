@@ -27,10 +27,10 @@ final class GameCoordinator: Coordinator<DeepLink> {
     //MARK: - Run current flow's controllers
     
     private func showCreate() {
-//        let createGameOuput = factory.makeGameOutput()
-//        createGameOuput.onDidFinishGame = { [weak self] in
-//            self?.finishFlow?()
-//        }
-//        router.setRootModule(createGameOuput)
+        let gameOuput = factory.makeGameOutput()
+        gameOuput.onDidFinishGame = { [weak self] in
+            self?.finishFlow?()
+        }
+        router.push(gameOuput, animated: true, completion: nil)
     }
 }

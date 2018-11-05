@@ -60,8 +60,6 @@
 		D50D25A0217D02F600DB39EC /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D259F217D02F600DB39EC /* TabbarView.swift */; };
 		D50D25A421862D0700DB39EC /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D25A321862D0700DB39EC /* FlowController.swift */; };
 		D50D25A62186492B00DB39EC /* CoordinatorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D25A52186492B00DB39EC /* CoordinatorOutput.swift */; };
-		D50D25A82189155000DB39EC /* WindowRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D25A72189155000DB39EC /* WindowRouter.swift */; };
-		D50D25AA2189156300DB39EC /* WindowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D25A92189156300DB39EC /* WindowCoordinator.swift */; };
 		D50D25AD218F649700DB39EC /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D25AC218F649700DB39EC /* Loggable.swift */; };
 		D50D25AF218F7F9C00DB39EC /* TabbarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D25AE218F7F9C00DB39EC /* TabbarCoordinator.swift */; };
 		D568A6B22180695C003FC83A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D568A6B12180695C003FC83A /* AppCoordinator.swift */; };
@@ -125,8 +123,6 @@
 		D50D259F217D02F600DB39EC /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		D50D25A321862D0700DB39EC /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		D50D25A52186492B00DB39EC /* CoordinatorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorOutput.swift; sourceTree = "<group>"; };
-		D50D25A72189155000DB39EC /* WindowRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowRouter.swift; sourceTree = "<group>"; };
-		D50D25A92189156300DB39EC /* WindowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowCoordinator.swift; sourceTree = "<group>"; };
 		D50D25AC218F649700DB39EC /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
 		D50D25AE218F7F9C00DB39EC /* TabbarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarCoordinator.swift; sourceTree = "<group>"; };
 		D568A6B12180695C003FC83A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -258,7 +254,6 @@
 			children = (
 				D50D2535217C9BF400DB39EC /* RouterType.swift */,
 				D50D2537217C9C3800DB39EC /* Router.swift */,
-				D50D25A72189155000DB39EC /* WindowRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -267,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				D50D2531217C9A6100DB39EC /* Coordinator.swift */,
-				D50D25A92189156300DB39EC /* WindowCoordinator.swift */,
 				D50D2533217C9B2C00DB39EC /* Presentable.swift */,
 				D50D25A321862D0700DB39EC /* FlowController.swift */,
 				D50D25A52186492B00DB39EC /* CoordinatorOutput.swift */,
@@ -533,7 +527,6 @@
 				D50D2597217CCE3100DB39EC /* TermsController.swift in Sources */,
 				D50D258B217CCCB800DB39EC /* JoinGameController.swift in Sources */,
 				D50D25A421862D0700DB39EC /* FlowController.swift in Sources */,
-				D50D25A82189155000DB39EC /* WindowRouter.swift in Sources */,
 				D50D2585217CC81700DB39EC /* SettingsController.swift in Sources */,
 				D50D258F217CCD4E00DB39EC /* SignUpView.swift in Sources */,
 				D50D25A0217D02F600DB39EC /* TabbarView.swift in Sources */,
@@ -546,7 +539,6 @@
 				D50D255F217CC13900DB39EC /* AuthCoordinatorOutput.swift in Sources */,
 				D50D2536217C9BF400DB39EC /* RouterType.swift in Sources */,
 				D50D2595217CCE2700DB39EC /* SignUpController.swift in Sources */,
-				D50D25AA2189156300DB39EC /* WindowCoordinator.swift in Sources */,
 				D50D253C217C9EAD00DB39EC /* UIViewExtensions.swift in Sources */,
 				D50D257F217CC72400DB39EC /* SettingsCoordinatorOutput.swift in Sources */,
 				D50D25AF218F7F9C00DB39EC /* TabbarCoordinator.swift in Sources */,
