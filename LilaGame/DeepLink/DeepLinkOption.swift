@@ -9,8 +9,9 @@
 import Foundation
 
 enum DeepLink {
+    case main
     case onboarding
-    case signUp
+    case auth
     case game(String?)
     case settings
     case terms
@@ -32,7 +33,7 @@ extension DeepLink {
 
         switch id {
         case DeepLinkURLConstants.Onboarding: return .onboarding
-        case DeepLinkURLConstants.SignUp: return .signUp
+        case DeepLinkURLConstants.Auth: return .auth
         case DeepLinkURLConstants.Game: return .game(gameID)
         case DeepLinkURLConstants.Settings: return .settings
         case DeepLinkURLConstants.Terms: return .terms
@@ -43,7 +44,8 @@ extension DeepLink {
 
 struct DeepLinkURLConstants {
     static let Onboarding = "onboarding"
-    static let SignUp = "signUp"
+    static let Auth = "signUp"
+    static let JoinGame = "joinGame"
     static let Game = "game"
     static let Settings = "settings"
     static let Terms = "terms"

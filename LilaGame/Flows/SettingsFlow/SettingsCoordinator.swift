@@ -13,9 +13,8 @@ final class SettingsCoordinator: Coordinator<DeepLink>, SettingsCoordinatorOutpu
     var finishFlow: (() -> Void)?
     
     private let factory: SettingsModuleFactory
-    private let router: Router
     
-    init(router: Router, factory: SettingsModuleFactory) {
+    init(router: RouterType, factory: SettingsModuleFactory) {
         self.factory = factory
         self.router = router
     }
@@ -27,6 +26,6 @@ final class SettingsCoordinator: Coordinator<DeepLink>, SettingsCoordinatorOutpu
     //MARK: - Run current flow's controllers
     private func showSettings() {
         let settingsFlowOutput = factory.makeSettingsOutput()
-        router.setRootModule(settingsFlowOutput)
+        router.setRootModule(settingsFlowOutput, hideBar: true)
     }
 }

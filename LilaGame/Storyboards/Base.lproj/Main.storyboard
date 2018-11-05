@@ -9,40 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController storyboardIdentifier="MainController" id="BYZ-38-t0r" customClass="MainController" customModule="LilaGame" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fz-wY-Omp" userLabel="Join Game Button">
-                                <rect key="frame" x="93.666666666666671" y="636.66666666666663" width="187.66666666666663" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="LV8-dr-wmJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <state key="normal" title="Join Game"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1fz-wY-Omp" secondAttribute="baseline" constant="100" id="Ftv-tJ-oBB"/>
-                            <constraint firstItem="1fz-wY-Omp" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="b2U-JQ-6Zb"/>
-                            <constraint firstItem="1fz-wY-Omp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zfx-L7-IUU"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2641" y="-175"/>
-        </scene>
         <!--Item 2-->
         <scene sceneID="Bt8-Hk-4jh">
             <objects>
-                <viewController storyboardIdentifier="SettingsController" id="aeM-h8-nei" customClass="SettingsController" customModule="LilaGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsController" id="aeM-h8-nei" customClass="UINavigationController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cwn-Zt-pyV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,7 +28,7 @@
         <!--Item 1-->
         <scene sceneID="3Hc-UT-uhD">
             <objects>
-                <viewController storyboardIdentifier="JoinGameController" id="Y1g-Ut-4QK" customClass="JoinGameController" customModule="LilaGame" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JoinGameController" id="Y1g-Ut-4QK" customClass="UINavigationController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YYJ-Qf-Ee0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

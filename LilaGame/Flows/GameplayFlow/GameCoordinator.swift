@@ -9,11 +9,10 @@
 import UIKit
 
 
-final class GameCoordinator: Coordinator<DeepLink>, GameCoordinatorOutput {
+final class GameCoordinator: Coordinator<DeepLink>, GameplayCoordinatorOutput {
     
     var finishFlow: (() -> Void)?
     
-    private let router: Router
     private let factory: GameModuleFactory
     
     init(router: Router, factory: GameModuleFactory) {
@@ -28,10 +27,10 @@ final class GameCoordinator: Coordinator<DeepLink>, GameCoordinatorOutput {
     //MARK: - Run current flow's controllers
     
     private func showCreate() {
-        let createGameOuput = factory.makeGameOutput()
-        createGameOuput.onDidFinishGame = { [weak self] in
-            self?.finishFlow?()
-        }
-        router.setRootModule(createGameOuput)
+//        let createGameOuput = factory.makeGameOutput()
+//        createGameOuput.onDidFinishGame = { [weak self] in
+//            self?.finishFlow?()
+//        }
+//        router.setRootModule(createGameOuput)
     }
 }

@@ -18,38 +18,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return self.window!.rootViewController as! UINavigationController
     }
     
-    lazy var appRouter: RouterType = Router(navigationController: self.rootController)
-    lazy var appCoordinator: AppCoordinator = AppCoordinator(router: self.appRouter, store: self.appStore)
-    
-    private lazy var applicationCoordinator: Coordinator = {
-        
-        
-        return ApplicationCoordinator(router: Router(navigationController: rootController),
-                                      coordinatorFactory: CoordinatorFactoryImpl())
-    }()
+//    lazy var appNavigationController: UINavigationController = UINavigationController()
+    lazy var appRouter: RouterType = Router(navigationController: rootController)
+    lazy var appCoordinator: AppCoordinator = AppCoordinator(router: appRouter, coordinatorFactory: CoordinatorFactoryImpl())
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let notification = launchOptions?[.remoteNotification] as? [String: AnyObject]
-        let deepLink = DeepLinkOption.build(with: notification)
-        applicationCoordinator.start(with: deepLink)
+        // MARK: Window
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.rootViewController = appCoordinator.toPresentable()
+//        window?.backgroundColor = .white
+//        window?.makeKeyAndVisible()
+        
+//        let notification = launchOptions?[.remoteNotification] as? [String: AnyObject]
+        let deepLink = DeepLink.main
+        appCoordinator.start(with: deepLink)
         return true
     }
     
     //MARK: Handle push notifications and deep links
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        let dict = userInfo as? [String: AnyObject]
-        let deepLink = DeepLinkOption.build(with: dict)
-        applicationCoordinator.start(with: deepLink)
+//        let dict = userInfo as? [String: AnyObject]
+//        let deepLink = DeepLink.build(with: dict)
+//        applicationCoordinator.start(with: deepLink)
     }
     
     func application(_ application: UIApplication,
                      continue userActivity: NSUserActivity,
                      restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        let deepLink = DeepLinkOption.build(with: userActivity)
-        applicationCoordinator.start(with: deepLink)
-        return true
+//        let deepLink = DeepLink.build(with: userActivity)
+//        applicationCoordinator.start(with: deepLink)
+//        return true
     }
 }
 

@@ -14,7 +14,6 @@ final class StartGameCoordinator: Coordinator<DeepLink>, StartGameCoordinatorOut
     
     private let factory: JoinGameModuleFactory
     private let coordinatorFactory: CoordinatorFactory
-    private let router: Router
     
     init(router: Router, factory: JoinGameModuleFactory, coordinatorFactory: CoordinatorFactory) {
         self.router = router
@@ -35,10 +34,10 @@ final class StartGameCoordinator: Coordinator<DeepLink>, StartGameCoordinatorOut
     
     private func showJoinGame() {
         let joinGameOutput = factory.makeJoinGameOutput()
-        joinGameOutput.onCompleteJoinGame = { [weak self] item in
-            self?.finishFlow?()
-        }
-        router.setRootModule(joinGameOutput)
+//        joinGameOutput.onCompleteJoinGame = { [weak self] item in
+//            self?.finishFlow?()
+//        }
+        router.setRootModule(joinGameOutput, hideBar: true)
     }
     
     

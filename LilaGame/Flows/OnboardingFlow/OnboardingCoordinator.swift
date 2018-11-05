@@ -11,15 +11,14 @@ final class OnboardingCoordinator: Coordinator<DeepLink>, OnboardingCoordinatorO
     var finishFlow: (() -> Void)?
     
     private let factory: OnboardingModuleFactory
-    private let router: Router
     
-    init(with factory: OnboardingModuleFactory, router: Router) {
+    init(with factory: OnboardingModuleFactory, router: RouterType) {
         self.factory = factory
         self.router = router
     }
     
     deinit {
-        deinitLogger()
+        deinitPrintLog()
     }
     
     override func start() {
@@ -27,10 +26,10 @@ final class OnboardingCoordinator: Coordinator<DeepLink>, OnboardingCoordinatorO
     }
     
     func showOnboarding() {
-        let onboardingModule = factory.makeOnboardingModule()
-        onboardingModule.onFinish = { [weak self] in
-            self?.finishFlow?()
-        }
-        router.setRootModule(onboardingModule.toPresent())
+//        let onboardingModule = factory.makeOnboardingModule()
+//        onboardingModule.onFinish = { [weak self] in
+//            self?.finishFlow?()
+//        }
+//        router.setRootModule(onboardingModule.toPresent())
     }
 }

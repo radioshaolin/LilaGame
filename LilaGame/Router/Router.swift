@@ -8,25 +8,26 @@
 
 import UIKit
 
-final public class Router: NSObject, RouterType, UINavigationControllerDelegate {
+final public class Router: NSObject, RouterType, UINavigationControllerDelegate, Loggable {
     
+    public let navigationController: UINavigationController
     private var completions: [UIViewController : () -> Void]
-    
     public var rootViewController: UIViewController? {
         return navigationController.viewControllers.first
     }
-    
     public var hasRootController: Bool {
         return rootViewController != nil
     }
-    
-    public let navigationController: UINavigationController
     
     public init(navigationController: UINavigationController = UINavigationController()) {
         self.navigationController = navigationController
         self.completions = [:]
         super.init()
         self.navigationController.delegate = self
+    }
+    
+    deinit {
+        deinitPrintLog()
     }
     
     public func present(_ module: Presentable, animated: Bool = true) {

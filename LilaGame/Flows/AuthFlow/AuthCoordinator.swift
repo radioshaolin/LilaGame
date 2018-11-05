@@ -13,10 +13,9 @@ final class AuthCoordinator: Coordinator<DeepLink>, AuthCoordinatorOutput {
     var finishFlow: (() -> Void)?
     
     private let factory: AuthModuleFactory
-    private let router: Router
     private weak var signUpView: SignUpView?
     
-    init(router: Router, factory: AuthModuleFactory) {
+    init(router: RouterType, factory: AuthModuleFactory) {
         self.factory = factory
         self.router = router
     }
@@ -35,7 +34,7 @@ final class AuthCoordinator: Coordinator<DeepLink>, AuthCoordinatorOutput {
         loginOutput.onSignUpButtonTap = { [weak self] in
             self?.showSignUp()
         }
-        router.setRootModule(loginOutput)
+        router.setRootModule(loginOutput, hideBar: true)
     }
     
     private func showSignUp() {
@@ -46,7 +45,7 @@ final class AuthCoordinator: Coordinator<DeepLink>, AuthCoordinatorOutput {
         signUpView?.onTermsButtonTap = { [weak self] in
             self?.showTerms()
         }
-        router.push(signUpView)
+        router.push(signUpView, animated: true, completion: nil)
     }
     
     private func showTerms() {
@@ -56,7 +55,7 @@ final class AuthCoordinator: Coordinator<DeepLink>, AuthCoordinatorOutput {
         termsOutput.onConfirmChanged = { [weak self] confirmed in
             self?.signUpView?.conformTermsAgreement(confirmed)
         }
-        router.push(termsOutput, animated: true)
+        router.push(termsOutput, animated: true, completion: nil)
     }
 }
 

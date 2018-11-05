@@ -8,9 +8,8 @@
 
 import UIKit
 
-final class MainController: UITabBarController, UITabBarControllerDelegate, TabbarView {
-    
-    var onItemFlowSelect: ((UINavigationController) -> ())?
+final class TabbarController: UITabBarController, UITabBarControllerDelegate, TabbarView {
+    var onJoinGameFlowSelect: ((UINavigationController) -> ())?
     var onSettingsFlowSelect: ((UINavigationController) -> ())?
     var onViewDidLoad: ((UINavigationController) -> ())?
     
@@ -27,13 +26,10 @@ final class MainController: UITabBarController, UITabBarControllerDelegate, Tabb
         guard let controller = viewControllers?[selectedIndex] as? UINavigationController else { return }
         
         if selectedIndex == 0 {
-            onItemFlowSelect?(controller)
+            onJoinGameFlowSelect?(controller)
         }
         else if selectedIndex == 1 {
             onSettingsFlowSelect?(controller)
         }
     }
 }
-
-var onViewDidLoad: ((UINavigationController) -> ())?
-
