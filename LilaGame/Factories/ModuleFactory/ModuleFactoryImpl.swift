@@ -6,9 +6,17 @@
 //  Copyright © 2018 Radio Shaolin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class ModuleFactoryImpl: ModuleFactory {
+
+    func makeTabBarController() -> UITabBarController {
+        return UITabBarController.controllerFromStoryboard(.main)
+    }
+
+    func makeNavigationController() -> UINavigationController {
+        return UINavigationController.controllerFromStoryboard(.main)
+    }
     
     func makeLoginOutput() -> LoginView {
         return LoginController.controllerFromStoryboard(.auth)

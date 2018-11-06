@@ -9,10 +9,9 @@
 import UIKit
 
 protocol CoordinatorFactory: Loggable {
-    func makeTabbarCoordinator(router: RouterType, coordinatorFactory: CoordinatorFactory) -> (coordinator: Coordinator<DeepLink>, toPresent: Presentable)
-    func makeOnboardingCoordinator(router: RouterType) -> Coordinator<DeepLink> & OnboardingCoordinatorOutput
-    func makeAuthCoordinator(router: RouterType) -> Coordinator<DeepLink> & AuthCoordinatorOutput
-//    func makeStartGameCoordinator(router: Router) ->  Coordinator<DeepLink> & StartGameCoordinatorOutput
-    func makeGameCoordinator(with navigationController: UINavigationController?) ->  Coordinator<DeepLink>
-    func makeSettingsCoordinator(with navigationController: UINavigationController?) -> Coordinator<DeepLink>
+    func makeTabbarCoordinator(coordinatorFactory: CoordinatorFactory) -> (coordinator: Coordinator, toPresent: Presentable)
+    func makeOnboardingCoordinator(router: Router) -> Coordinator & OnboardingCoordinatorOutput
+    func makeAuthCoordinator(router: Router) -> Coordinator & AuthCoordinatorOutput
+    func makeGameCoordinator(with navigationController: UINavigationController) ->  Coordinator
+    func makeSettingsCoordinator(with navigationController: UINavigationController) -> Coordinator
 }

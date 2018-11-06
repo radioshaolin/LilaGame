@@ -9,15 +9,16 @@
 import UIKit
 
 
-final class GameCoordinator: Coordinator<DeepLink> {
+final class GameCoordinator: BaseCoordinator {
     
     var finishFlow: (() -> Void)?
     
     private let factory: GameModuleFactory
+    private let router: Router
     
     init(router: Router, factory: GameModuleFactory) {
+        self.router = router
         self.factory = factory
-        super.init(router: router)
     }
     
     override func start() {

@@ -30,7 +30,7 @@ final class SettingsCoordinator: BaseCoordinator, SettingsCoordinatorOutput {
     
     //MARK: - Run current flow's controllers
     private func showSettings() {
-//        let settingsFlowOutput = factory.makeSettingsOutput()
-//        router.setRootModule(settingsFlowOutput, hideBar: true)
+        let settingsFlowOutput = factory.makeSettingsOutput()
+        router.setRootModule(settingsFlowOutput, hideBar: true)
     }
 }

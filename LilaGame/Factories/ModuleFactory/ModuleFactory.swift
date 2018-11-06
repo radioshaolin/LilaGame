@@ -6,7 +6,19 @@
 //  Copyright © 2018 Radio Shaolin. All rights reserved.
 //
 
-protocol ModuleFactory: OnboardingModuleFactory, SettingsModuleFactory, AuthModuleFactory, JoinGameModuleFactory, GameModuleFactory {}
+import UIKit
+
+protocol ModuleFactory: OnboardingModuleFactory,
+                        SettingsModuleFactory,
+                        AuthModuleFactory,
+                        JoinGameModuleFactory,
+                        GameModuleFactory,
+                        ApplicationViewFactory {}
+
+protocol ApplicationViewFactory {
+    func makeTabBarController() -> UITabBarController
+    func makeNavigationController() -> UINavigationController
+}
 
 protocol OnboardingModuleFactory {
     func makeOnboardingModule() -> OnboardingView

@@ -8,16 +8,17 @@
 
 import UIKit
 
-final class AuthCoordinator: Coordinator<DeepLink>, AuthCoordinatorOutput {
+final class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
     
     var finishFlow: (() -> Void)?
     
     private let factory: AuthModuleFactory
+    private let router: Router
     private weak var signUpView: SignUpView?
     
-    init(router: RouterType, factory: AuthModuleFactory) {
+    init(router: Router, factory: AuthModuleFactory) {
+        self.router = router
         self.factory = factory
-        super.init(router: router)
     }
     
     override func start() {

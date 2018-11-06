@@ -14,8 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    lazy var appNavigationController: UINavigationController = UINavigationController()
-    lazy var appRouter: Router = RouterImpl(navigationController: appNavigationController)
+    lazy var appNavigationController: UINavigationController = moduleFactory.makeNavigationController()
+    lazy var appTabBarController: UITabBarController = moduleFactory.makeTabBarController()
+    lazy var appRouter: Router = RouterImpl(rootController: appNavigationController)
     lazy var moduleFactory: ModuleFactory = ModuleFactoryImpl()
     lazy var coordinatorFactory: CoordinatorFactory = CoordinatorFactoryImpl(moduleFactory: moduleFactory)
     lazy var appCoordinator: AppCoordinator = AppCoordinator(router: appRouter, coordinatorFactory: coordinatorFactory)
@@ -30,8 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // or get notification from launch options and convert it to a deep link
         let notification = launchOptions?[.remoteNotification] as? [String: AnyObject]
-        let deepLink = DeepLink.build(with: notification)
-//        let deepLink = DeepLink.main
+//        let deepLink = DeepLink.build(with: notification)
+        let deepLink = DeepLink.main
         appCoordinator.start(with: deepLink)
         return true
     }

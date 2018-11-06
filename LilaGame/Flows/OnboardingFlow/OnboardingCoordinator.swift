@@ -6,15 +6,16 @@
 //  Copyright © 2018 Radio Shaolin. All rights reserved.
 //
 
-final class OnboardingCoordinator: Coordinator<DeepLink>, OnboardingCoordinatorOutput {
+final class OnboardingCoordinator: BaseCoordinator, OnboardingCoordinatorOutput {
     
     var finishFlow: (() -> Void)?
     
+    private let router: Router
     private let factory: OnboardingModuleFactory
     
-    init(router: RouterType, factory: OnboardingModuleFactory) {
+    init(router: Router, factory: OnboardingModuleFactory) {
+        self.router = router
         self.factory = factory
-        super.init(router: router)
     }
     
     deinit {
