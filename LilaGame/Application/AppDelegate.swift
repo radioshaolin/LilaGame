@@ -13,12 +13,10 @@ import Foundation
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-    lazy var appNavigationController: UINavigationController = moduleFactory.makeNavigationController()
-    lazy var appTabBarController: UITabBarController = moduleFactory.makeTabBarController()
-    lazy var appRouter: Router = RouterImpl(rootController: appNavigationController)
+    
     lazy var moduleFactory: ModuleFactory = ModuleFactoryImpl()
     lazy var coordinatorFactory: CoordinatorFactory = CoordinatorFactoryImpl(moduleFactory: moduleFactory)
+    lazy var appRouter: Router = AppRouterImpl(rootController: TabBarController.controllerFromStoryboard(.main))
     lazy var appCoordinator: AppCoordinator = AppCoordinator(router: appRouter, coordinatorFactory: coordinatorFactory)
 
     func application(_ application: UIApplication,
@@ -30,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         // or get notification from launch options and convert it to a deep link
-        let notification = launchOptions?[.remoteNotification] as? [String: AnyObject]
+//        let notification = launchOptions?[.remoteNotification] as? [String: AnyObject]
 //        let deepLink = DeepLink.build(with: notification)
         let deepLink = DeepLink.main
         appCoordinator.start(with: deepLink)

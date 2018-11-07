@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9997253ED5A7687A2C1D088F /* AppRouterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99972E63EF04350F294954F5 /* AppRouterImpl.swift */; };
 		D50D2510217C91D500DB39EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D250F217C91D500DB39EC /* AppDelegate.swift */; };
-		D50D2512217C91D500DB39EC /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D2511217C91D500DB39EC /* TabbarController.swift */; };
+		D50D2512217C91D500DB39EC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D2511217C91D500DB39EC /* TabBarController.swift */; };
 		D50D2515217C91D500DB39EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D50D2513217C91D500DB39EC /* Main.storyboard */; };
 		D50D2517217C91D800DB39EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D50D2516217C91D800DB39EC /* Assets.xcassets */; };
 		D50D251A217C91D800DB39EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D50D2518217C91D800DB39EC /* LaunchScreen.storyboard */; };
@@ -57,19 +58,21 @@
 		D50D2597217CCE3100DB39EC /* TermsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D2596217CCE3100DB39EC /* TermsController.swift */; };
 		D50D259C217CFC5200DB39EC /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D259B217CFC5200DB39EC /* GameView.swift */; };
 		D50D259E217CFC6F00DB39EC /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D259D217CFC6F00DB39EC /* GameController.swift */; };
-		D50D25A0217D02F600DB39EC /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D259F217D02F600DB39EC /* TabbarView.swift */; };
+		D50D25A0217D02F600DB39EC /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D259F217D02F600DB39EC /* TabBarView.swift */; };
 		D50D25A421862D0700DB39EC /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D25A321862D0700DB39EC /* FlowController.swift */; };
 		D50D25A62186492B00DB39EC /* CoordinatorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D25A52186492B00DB39EC /* CoordinatorOutput.swift */; };
 		D50D25AD218F649700DB39EC /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D25AC218F649700DB39EC /* Loggable.swift */; };
-		D50D25AF218F7F9C00DB39EC /* TabbarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D25AE218F7F9C00DB39EC /* TabbarCoordinator.swift */; };
+		D50D25AF218F7F9C00DB39EC /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D25AE218F7F9C00DB39EC /* TabBarCoordinator.swift */; };
 		D568A6B22180695C003FC83A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D568A6B12180695C003FC83A /* AppCoordinator.swift */; };
+		D5974A9721935B4F009164BC /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5974A9621935B4F009164BC /* AppRouter.swift */; };
 		D5BBA9EC218FD226004146C7 /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5BBA9EB218FD226004146C7 /* Test.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		99972E63EF04350F294954F5 /* AppRouterImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouterImpl.swift; sourceTree = "<group>"; };
 		D50D250C217C91D500DB39EC /* LilaGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LilaGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D50D250F217C91D500DB39EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D50D2511217C91D500DB39EC /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		D50D2511217C91D500DB39EC /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		D50D2514217C91D500DB39EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D50D2516217C91D800DB39EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D50D2519217C91D800DB39EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -120,12 +123,13 @@
 		D50D2599217CCF9200DB39EC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D50D259B217CFC5200DB39EC /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		D50D259D217CFC6F00DB39EC /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
-		D50D259F217D02F600DB39EC /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
+		D50D259F217D02F600DB39EC /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		D50D25A321862D0700DB39EC /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		D50D25A52186492B00DB39EC /* CoordinatorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorOutput.swift; sourceTree = "<group>"; };
 		D50D25AC218F649700DB39EC /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
-		D50D25AE218F7F9C00DB39EC /* TabbarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarCoordinator.swift; sourceTree = "<group>"; };
+		D50D25AE218F7F9C00DB39EC /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		D568A6B12180695C003FC83A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		D5974A9621935B4F009164BC /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		D5BBA9EB218FD226004146C7 /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -254,6 +258,8 @@
 			children = (
 				D50D2535217C9BF400DB39EC /* Router.swift */,
 				D50D2537217C9C3800DB39EC /* RouterImpl.swift */,
+				D5974A9621935B4F009164BC /* AppRouter.swift */,
+				99972E63EF04350F294954F5 /* AppRouterImpl.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -322,7 +328,7 @@
 		D50D2558217CC01200DB39EC /* MainTabbarFlow */ = {
 			isa = PBXGroup;
 			children = (
-				D50D25AE218F7F9C00DB39EC /* TabbarCoordinator.swift */,
+				D50D25AE218F7F9C00DB39EC /* TabBarCoordinator.swift */,
 				D50D255A217CC0E300DB39EC /* Controllers */,
 			);
 			path = MainTabbarFlow;
@@ -341,8 +347,8 @@
 		D50D255A217CC0E300DB39EC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D50D259F217D02F600DB39EC /* TabbarView.swift */,
-				D50D2511217C91D500DB39EC /* TabbarController.swift */,
+				D50D259F217D02F600DB39EC /* TabBarView.swift */,
+				D50D2511217C91D500DB39EC /* TabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -517,11 +523,12 @@
 				D50D258D217CCD3800DB39EC /* LoginView.swift in Sources */,
 				D50D256C217CC26F00DB39EC /* StartGameCoordinatorOutput.swift in Sources */,
 				D50D25AD218F649700DB39EC /* Loggable.swift in Sources */,
+				D5974A9721935B4F009164BC /* AppRouter.swift in Sources */,
 				D50D2570217CC41800DB39EC /* OnboardingView.swift in Sources */,
 				D50D256E217CC28700DB39EC /* StartGameCoordinator.swift in Sources */,
 				D50D252F217C97CC00DB39EC /* DeepLinkOption.swift in Sources */,
 				D50D253A217C9C7600DB39EC /* NSObjectExtensions.swift in Sources */,
-				D50D2512217C91D500DB39EC /* TabbarController.swift in Sources */,
+				D50D2512217C91D500DB39EC /* TabBarController.swift in Sources */,
 				D50D2546217CB2A000DB39EC /* CoordinatorFactory.swift in Sources */,
 				D50D2591217CCD5900DB39EC /* TermsView.swift in Sources */,
 				D50D2597217CCE3100DB39EC /* TermsController.swift in Sources */,
@@ -529,7 +536,7 @@
 				D50D25A421862D0700DB39EC /* FlowController.swift in Sources */,
 				D50D2585217CC81700DB39EC /* SettingsController.swift in Sources */,
 				D50D258F217CCD4E00DB39EC /* SignUpView.swift in Sources */,
-				D50D25A0217D02F600DB39EC /* TabbarView.swift in Sources */,
+				D50D25A0217D02F600DB39EC /* TabBarView.swift in Sources */,
 				D50D2510217C91D500DB39EC /* AppDelegate.swift in Sources */,
 				D50D2583217CC74900DB39EC /* SettingsView.swift in Sources */,
 				D50D254B217CB4D000DB39EC /* OnboardingCoordinatorOutput.swift in Sources */,
@@ -541,12 +548,13 @@
 				D50D2595217CCE2700DB39EC /* SignUpController.swift in Sources */,
 				D50D253C217C9EAD00DB39EC /* UIViewExtensions.swift in Sources */,
 				D50D257F217CC72400DB39EC /* SettingsCoordinatorOutput.swift in Sources */,
-				D50D25AF218F7F9C00DB39EC /* TabbarCoordinator.swift in Sources */,
+				D50D25AF218F7F9C00DB39EC /* TabBarCoordinator.swift in Sources */,
 				D50D2574217CC4D000DB39EC /* PageController.swift in Sources */,
 				D50D2534217C9B2C00DB39EC /* Presentable.swift in Sources */,
 				D50D259E217CFC6F00DB39EC /* GameController.swift in Sources */,
 				D50D254D217CBDEB00DB39EC /* OnboardingCoordinator.swift in Sources */,
 				D50D2572217CC44C00DB39EC /* OnboardingController.swift in Sources */,
+				9997253ED5A7687A2C1D088F /* AppRouterImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

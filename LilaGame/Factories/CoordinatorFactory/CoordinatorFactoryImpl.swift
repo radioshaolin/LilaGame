@@ -21,8 +21,8 @@ final class CoordinatorFactoryImpl: CoordinatorFactory {
     }
 
     func makeTabbarCoordinator(coordinatorFactory: CoordinatorFactory) -> (coordinator: Coordinator, toPresent: Presentable) {
-        let controller = TabbarController.controllerFromStoryboard(.main)
-        let coordinator = TabbarCoordinator(tabbarView: controller, coordinatorFactory: coordinatorFactory)
+        let controller = TabBarController.controllerFromStoryboard(.main)
+        let coordinator = TabBarCoordinator(tabbarView: controller, coordinatorFactory: coordinatorFactory)
         return (coordinator, controller)
     }
     

@@ -8,20 +8,20 @@
 
 import UIKit
 
-final class TabbarCoordinator: BaseCoordinator, UITabBarControllerDelegate {
+final class TabBarCoordinator: BaseCoordinator, UITabBarControllerDelegate {
     
-    private let tabbarView: TabbarView
+    private let tabBarView: TabBarView
     private let coordinatorFactory: CoordinatorFactory
     
-    init(tabbarView: TabbarView, coordinatorFactory: CoordinatorFactory) {
-        self.tabbarView = tabbarView
+    init(tabbarView: TabBarView, coordinatorFactory: CoordinatorFactory) {
+        self.tabBarView = tabbarView
         self.coordinatorFactory = coordinatorFactory
     }
     
     override func start() {
-        tabbarView.onViewDidLoad = runGameFlow()
-        tabbarView.onGameFlowSelect = runGameFlow()
-        tabbarView.onSettingsFlowSelect = runSettingsFlow()
+        tabBarView.onViewDidLoad = runGameFlow()
+        tabBarView.onGameFlowSelect = runGameFlow()
+        tabBarView.onSettingsFlowSelect = runSettingsFlow()
     }
     
     private func runGameFlow() -> ((UINavigationController) -> ()) {

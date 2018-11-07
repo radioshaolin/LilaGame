@@ -13,7 +13,7 @@ final class RouterImpl: NSObject, Router, UINavigationControllerDelegate, Loggab
     private let rootController: UINavigationController
     private var completions: [UIViewController : () -> Void]
     
-    public init(rootController: UINavigationController) {
+    init(rootController: UINavigationController) {
         self.rootController = rootController
         self.completions = [:]
         super.init()

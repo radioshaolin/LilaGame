@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class TabbarController: UITabBarController, UITabBarControllerDelegate, TabbarView {
+final class TabBarController: UITabBarController, UITabBarControllerDelegate, TabBarView {
     
     var onGameFlowSelect: ((UINavigationController) -> ())?
     var onSettingsFlowSelect: ((UINavigationController) -> ())?
