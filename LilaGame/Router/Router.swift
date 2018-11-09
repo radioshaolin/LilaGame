@@ -10,7 +10,7 @@ import UIKit
 
 public protocol Router: class, Presentable {
 //    var navigationController: UINavigationController { get }
-//    var rootViewController: UIViewController? { get }    
+    var rootViewController: UIViewController? { get }    
     func setRootModule(_ module: Presentable, hideBar: Bool)
     func present(_ module: Presentable, animated: Bool)
     func push(_ module: Presentable, animated: Bool, completion: (() -> Void)?)

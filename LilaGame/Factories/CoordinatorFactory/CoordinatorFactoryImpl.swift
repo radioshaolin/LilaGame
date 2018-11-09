@@ -35,24 +35,26 @@ final class CoordinatorFactoryImpl: CoordinatorFactory {
 
     }
     
-    func makeSettingsCoordinator(with navigationController: UINavigationController) -> Coordinator {
-        navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 1)
-        let router = RouterImpl(rootController: navigationController)
+    func makeSettingsCoordinator() -> Coordinator {
+        let navigationController = UINavigationController()
+        navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+        let router = RouterImpl(navigationController: navigationController)
         let coordinator = SettingsCoordinator(router: router, factory: moduleFactory)
         return coordinator
     }
 
 
-    func makeGameCoordinator(with navigationController: UINavigationController) -> Coordinator {
+    func makeGameCoordinator() -> Coordinator {
+        let navigationController = UINavigationController()
         navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 0)
-        let router = RouterImpl(rootController: navigationController)
+        let router = RouterImpl(navigationController: navigationController)
         let coordinator = GameCoordinator(router: router, factory: moduleFactory)
         return coordinator
     }
     
     
     private func router(_ navController: UINavigationController?) -> Router {
-        return RouterImpl(rootController: navigationController(navController))
+        return RouterImpl(navigationController: navigationController(navController))
     }
     
     private func navigationController(_ navController: UINavigationController?) -> UINavigationController {

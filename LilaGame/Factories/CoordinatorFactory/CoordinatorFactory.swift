@@ -12,6 +12,6 @@ protocol CoordinatorFactory: Loggable {
     func makeTabbarCoordinator(coordinatorFactory: CoordinatorFactory) -> (coordinator: Coordinator, toPresent: Presentable)
     func makeOnboardingCoordinator(router: Router) -> Coordinator & OnboardingCoordinatorOutput
     func makeAuthCoordinator(router: Router) -> Coordinator & AuthCoordinatorOutput
-    func makeGameCoordinator(with navigationController: UINavigationController) ->  Coordinator
-    func makeSettingsCoordinator(with navigationController: UINavigationController) -> Coordinator
+    func makeGameCoordinator() ->  Coordinator
+    func makeSettingsCoordinator() -> Coordinator
 }

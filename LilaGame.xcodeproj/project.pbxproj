@@ -63,6 +63,7 @@
 		D50D25A62186492B00DB39EC /* CoordinatorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D25A52186492B00DB39EC /* CoordinatorOutput.swift */; };
 		D50D25AD218F649700DB39EC /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D25AC218F649700DB39EC /* Loggable.swift */; };
 		D50D25AF218F7F9C00DB39EC /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D50D25AE218F7F9C00DB39EC /* TabBarCoordinator.swift */; };
+		D53A76CF2193925B00B503B0 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53A76CE2193925B00B503B0 /* MainNavigationController.swift */; };
 		D568A6B22180695C003FC83A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D568A6B12180695C003FC83A /* AppCoordinator.swift */; };
 		D5974A9721935B4F009164BC /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5974A9621935B4F009164BC /* AppRouter.swift */; };
 		D5BBA9EC218FD226004146C7 /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5BBA9EB218FD226004146C7 /* Test.storyboard */; };
@@ -128,6 +129,7 @@
 		D50D25A52186492B00DB39EC /* CoordinatorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorOutput.swift; sourceTree = "<group>"; };
 		D50D25AC218F649700DB39EC /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
 		D50D25AE218F7F9C00DB39EC /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		D53A76CE2193925B00B503B0 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		D568A6B12180695C003FC83A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		D5974A9621935B4F009164BC /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		D5BBA9EB218FD226004146C7 /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
@@ -165,8 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				D50D2521217C925200DB39EC /* Application */,
-				D50D2529217C93F900DB39EC /* Coordinator */,
 				D50D2528217C93F100DB39EC /* Router */,
+				D50D2529217C93F900DB39EC /* Coordinator */,
 				D50D25AB218916DB00DB39EC /* DeepLink */,
 				D50D2526217C934800DB39EC /* Flows */,
 				D50D2525217C930700DB39EC /* Factories */,
@@ -256,6 +258,7 @@
 		D50D2528217C93F100DB39EC /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				D53A76CE2193925B00B503B0 /* MainNavigationController.swift */,
 				D50D2535217C9BF400DB39EC /* Router.swift */,
 				D50D2537217C9C3800DB39EC /* RouterImpl.swift */,
 				D5974A9621935B4F009164BC /* AppRouter.swift */,
@@ -547,6 +550,7 @@
 				D50D2536217C9BF400DB39EC /* Router.swift in Sources */,
 				D50D2595217CCE2700DB39EC /* SignUpController.swift in Sources */,
 				D50D253C217C9EAD00DB39EC /* UIViewExtensions.swift in Sources */,
+				D53A76CF2193925B00B503B0 /* MainNavigationController.swift in Sources */,
 				D50D257F217CC72400DB39EC /* SettingsCoordinatorOutput.swift in Sources */,
 				D50D25AF218F7F9C00DB39EC /* TabBarCoordinator.swift in Sources */,
 				D50D2574217CC4D000DB39EC /* PageController.swift in Sources */,

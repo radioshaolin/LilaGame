@@ -27,7 +27,7 @@ final class TabBarCoordinator: BaseCoordinator, UITabBarControllerDelegate {
     private func runGameFlow() -> ((UINavigationController) -> ()) {
         return { [weak self] navigationController in
             guard let strongSelf = self, navigationController.viewControllers.isEmpty else { return }
-            let gameCoordinator = strongSelf.coordinatorFactory.makeGameCoordinator(with: navigationController)
+            let gameCoordinator = strongSelf.coordinatorFactory.makeGameCoordinator()
             strongSelf.addDependency(gameCoordinator)
             gameCoordinator.start()
         }
@@ -36,7 +36,7 @@ final class TabBarCoordinator: BaseCoordinator, UITabBarControllerDelegate {
     private func runSettingsFlow() -> ((UINavigationController) -> ()) {
         return { [weak self] navigationController in
             guard let strongSelf = self, navigationController.viewControllers.isEmpty else { return }
-            let settingsCoordinator = strongSelf.coordinatorFactory.makeSettingsCoordinator(with: navigationController)
+            let settingsCoordinator = strongSelf.coordinatorFactory.makeSettingsCoordinator()
             settingsCoordinator.start()
             strongSelf.addDependency(settingsCoordinator)
             settingsCoordinator.start()

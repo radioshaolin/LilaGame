@@ -38,14 +38,15 @@ final class AppRouterImpl: NSObject, Router, UITabBarControllerDelegate, Loggabl
     public func push(_ module: Presentable,
                      animated: Bool = true,
                      completion: (() -> Void)? = nil) {
-//
-//        let controller = module.toPresentable()
-//        // Avoid pushing UINavigationController onto stack
-//        guard controller is UINavigationController == false else { return }
-//        if let completion = completion {
-//            completions[controller] = completion
-//        }
-//        rootController.pushViewController(controller, animated: animated)
+
+        let controller = module.toPresentable()
+        // Avoid pushing UINavigationController onto stack
+        guard controller is UINavigationController == false else { return }
+        if let completion = completion {
+            completions[controller] = completion
+        }
+        navigationController.pushViewController(controller, animated: animated)
+//        rootController.present
     }
 
     public func popModule(animated: Bool = true)  {

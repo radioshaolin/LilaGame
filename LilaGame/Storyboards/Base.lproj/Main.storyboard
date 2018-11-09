@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="1724" y="-175"/>
         </scene>
-        <!--Tabbar Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="SuM-sf-ge1">
             <objects>
-                <tabBarController storyboardIdentifier="TabbarController" id="heO-vs-Rn6" customClass="TabbarController" customModule="LilaGame" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="heO-vs-Rn6" customClass="TabBarController" customModule="LilaGame" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vYh-Bt-WHv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

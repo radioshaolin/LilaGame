@@ -13,6 +13,10 @@ protocol Coordinator: class {
     func start(with link: DeepLink?)
 }
 
+protocol Routable: class {
+    var router: Router { get set }
+}
+
 
 class BaseCoordinator: NSObject, Coordinator, Loggable {
     

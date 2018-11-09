@@ -16,22 +16,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     lazy var moduleFactory: ModuleFactory = ModuleFactoryImpl()
     lazy var coordinatorFactory: CoordinatorFactory = CoordinatorFactoryImpl(moduleFactory: moduleFactory)
-    lazy var appRouter: Router = AppRouterImpl(rootController: TabBarController.controllerFromStoryboard(.main))
+<<<<<<< HEAD
+    lazy var appNavigationController: UINavigationController = UINavigationController()
+    lazy var appRouter: Router = RouterImpl(navigationController: appNavigationController)
+=======
+    let mainNavigationController = MainNavigationController()
+    lazy var appRouter: Router = RouterImpl(rootController: mainNavigationController)
+>>>>>>> 33fd572374b8a323529e3bc1e766ab99eff25bc5
     lazy var appCoordinator: AppCoordinator = AppCoordinator(router: appRouter, coordinatorFactory: coordinatorFactory)
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // MARK: Window
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = appRouter.toPresentable()
+<<<<<<< HEAD
+        window?.rootViewController = appCoordinator.toPresentable()
+=======
+>>>>>>> 33fd572374b8a323529e3bc1e766ab99eff25bc5
         window?.backgroundColor = .white
         window?.makeKeyAndVisible()
+        
+        window?.rootViewController = mainNavigationController
+//            appRouter.toPresentable()
+
+
         
         // or get notification from launch options and convert it to a deep link
 //        let notification = launchOptions?[.remoteNotification] as? [String: AnyObject]
 //        let deepLink = DeepLink.build(with: notification)
         let deepLink = DeepLink.main
-        appCoordinator.start(with: deepLink)
+//        appCoordinator.start(with: deepLink)
         return true
     }
     
@@ -53,3 +67,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 
+func delay(delay: Double, closure: @escaping () -> ()) {
+    DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+        closure()
+    }
+}

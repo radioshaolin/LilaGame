@@ -10,14 +10,18 @@ import UIKit
 
 final class RouterImpl: NSObject, Router, UINavigationControllerDelegate, Loggable {
     
-    private let rootController: UINavigationController
+    private let navigationController: UINavigationController
     private var completions: [UIViewController : () -> Void]
+
+    var rootViewController: UIViewController? {
+        return navigationController.viewControllers.first
+    }
     
-    init(rootController: UINavigationController) {
-        self.rootController = rootController
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
         self.completions = [:]
         super.init()
-        self.rootController.delegate = self
+        self.navigationController.delegate = self
     }
     
     deinit {
@@ -25,13 +29,13 @@ final class RouterImpl: NSObject, Router, UINavigationControllerDelegate, Loggab
     }
     
     public func present(_ module: Presentable, animated: Bool = true) {
-        rootController.present(module.toPresentable(),
+        navigationController.present(module.toPresentable(),
                                      animated: animated,
                                      completion: nil)
     }
     
     public func dismissModule(animated: Bool = true, completion: (() -> Void)? = nil) {
-        rootController.dismiss(animated: animated, completion: completion)
+        navigationController.dismiss(animated: animated, completion: completion)
     }
     
     public func push(_ module: Presentable,
@@ -44,11 +48,11 @@ final class RouterImpl: NSObject, Router, UINavigationControllerDelegate, Loggab
         if let completion = completion {
             completions[controller] = completion
         }
-        rootController.pushViewController(controller, animated: animated)
+        navigationController.pushViewController(controller, animated: animated)
     }
     
     public func popModule(animated: Bool = true)  {
-        if let controller = rootController.popViewController(animated: animated) {
+        if let controller = navigationController.popViewController(animated: animated) {
             runCompletion(for: controller)
         }
     }
@@ -56,12 +60,12 @@ final class RouterImpl: NSObject, Router, UINavigationControllerDelegate, Loggab
     public func setRootModule(_ module: Presentable, hideBar: Bool = false) {
         // Call all completions so all coordinators can be deallocated
         completions.forEach { $0.value() }
-        rootController.setViewControllers([module.toPresentable()], animated: false)
-        rootController.isNavigationBarHidden = hideBar
+        navigationController.setViewControllers([module.toPresentable()], animated: false)
+        navigationController.isNavigationBarHidden = hideBar
     }
     
     public func popToRootModule(animated: Bool) {
-        if let controllers = rootController.popToRootViewController(animated: animated) {
+        if let controllers = navigationController.popToRootViewController(animated: animated) {
             controllers.forEach { runCompletion(for: $0) }
         }
     }
@@ -74,7 +78,7 @@ final class RouterImpl: NSObject, Router, UINavigationControllerDelegate, Loggab
     
     // MARK: Presentable
     public func toPresentable() -> UIViewController {
-        return rootController
+        return navigationController
     }
     
     // MARK: UINavigationControllerDelegate
